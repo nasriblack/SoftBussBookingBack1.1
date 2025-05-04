@@ -1,7 +1,5 @@
 ### 🧠 Sprint Planning / Ideas
 
-- [ ] Add prisma schema
-- [ ] Setup Docker compose file for the pg database
 - [ ] Implement the white list user in the database => registration
 - [ ] Implement the authentifcation flow in back => authentification
 - [ ] Implement the reservartion flow => reservation
@@ -45,6 +43,10 @@
 
 - [X] Initialize Git repo
 - [X] Setup the project and structure
+- [X] Setup prisma
+- [X] Add prisma schema
+- [X] Setup Docker compose file for the pg database
+- [X] Implement the seed data in prisma
 
 ---
 

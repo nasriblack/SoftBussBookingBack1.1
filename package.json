@@ -7,7 +7,8 @@
     "build": "tsc",
     "clean": "rm -rd dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/server.ts\" -e .ts",
-    "start": "node -r esbuild-register ./src/index.ts"
+    "start": "node -r esbuild-register ./src/index.ts",
+    "prisma:seed": "ts-node prisma/seed.ts"
   },
   "keywords": [
     "Node",
@@ -16,6 +17,7 @@
   "author": "LAKHAL NASEREDDINE",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.7.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
@@ -32,6 +34,7 @@
     "esbuild": "^0.24.2",
     "esbuild-register": "^3.6.0",
     "nodemon": "^3.1.9",
+    "prisma": "^6.7.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
