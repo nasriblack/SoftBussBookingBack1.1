@@ -44,3 +44,18 @@
 ---
 
 ### ✔️ Done
+
+---
+
+### 📘 What I Learned
+
+
+
+---
+
+### 📎 Resources & Documentation
+
+
+---
+
+### 🔗 Git Project
