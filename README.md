@@ -1,7 +1,5 @@
 ### 🧠 Sprint Planning / Ideas
 
-- [ ] Initialize Git repo
-- [ ] Setup the project and structure
 - [ ] Add prisma schema
 - [ ] Setup Docker compose file for the pg database
 - [ ] Implement the white list user in the database => registration
@@ -44,6 +42,9 @@
 ---
 
 ### ✔️ Done
+
+- [X] Initialize Git repo
+- [X] Setup the project and structure
 
 ---
 
