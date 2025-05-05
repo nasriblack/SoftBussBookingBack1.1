@@ -39,7 +39,6 @@
 
 ### 🛠️ Doing
 
-- [ ] Add Enum of role Admin , User
 ---
 
 ### ✔️ Done
@@ -50,6 +49,7 @@
 - [X] Add prisma schema
 - [X] Setup Docker compose file for the pg database
 - [X] Implement the seed data in prisma
+- [X] Add Enum of role Admin , User
 
 ---
 
