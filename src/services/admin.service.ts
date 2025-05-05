@@ -1,5 +1,5 @@
 import { prismaClient } from "../utils/prisma";
-import { IListWhiteUser } from "./../models/IListWhiteUser";
+import { IListWhiteUser } from "../models/IListWhiteUser";
 
 export const AddUserInWhiteList = async (
   user: any

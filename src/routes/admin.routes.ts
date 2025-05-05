@@ -1,11 +1,12 @@
-import express, { NextFunction, Router, type Express } from "express";
-import * as userWhiteList from "../services/whiteUserList.service";
+import express, { Router, type Express } from "express";
+import { endPoint } from "../utils/endpoints";
+import * as AdminController from "../controller/admin.controller";
 
-export const AddUserInWhiteLIst = async (
-  request: Request,
-  response: Response,
-  next: NextFunction
-): Promise<any> => {
-  const user = request.body;
-  const addUserInList = await userWhiteList.AddUserInWhiteList(user);
-};
+const adminRouter: Router = express.Router();
+
+adminRouter.post(
+  endPoint.Admin.WHITE_LIST_USERS,
+  AdminController.AddUserInWhiteLIst
+);
+
+export default adminRouter;

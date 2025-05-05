@@ -3,3 +3,5 @@ export const endPoint = {
     WHITE_LIST_USERS: "/adduser",
   },
 };
+
+export const apiVersion = "/api/v1";
