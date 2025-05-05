@@ -17,6 +17,8 @@
 - [ ] Implement the lock row method
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
+- [ ] Add Enum of role Admin , Employe
+- [ ] As new member it should take the Employe Role => registration
 
 
 => Deadline 17/05/2025
