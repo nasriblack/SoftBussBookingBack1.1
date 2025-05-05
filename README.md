@@ -17,7 +17,6 @@
 - [ ] Implement the lock row method
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
-- [ ] Add Enum of role Admin , Employe
 - [ ] As new member it should take the Employe Role => registration
 - [ ] I need to be verified to make the registration => registration
 
@@ -40,6 +39,7 @@
 
 ### 🛠️ Doing
 
+- [ ] Add Enum of role Admin , User
 ---
 
 ### ✔️ Done
