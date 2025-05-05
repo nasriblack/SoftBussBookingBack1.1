@@ -39,6 +39,7 @@
 
 ### 🛠️ Doing
 
+- [ ] Implement the folder structure
 ---
 
 ### ✔️ Done
@@ -65,3 +66,12 @@
 ---
 
 ### 🔗 Git Project
+
+
+
+###  Notes
+
+The route folder will be like this :
+-   Admin file => will be the route of admin
+-   Authentifcation file => will be the route of registration and login
+-   reservation file => will be the flow of the reservation   
