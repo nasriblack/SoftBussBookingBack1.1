@@ -1,6 +1,5 @@
 ### 🧠 Sprint Planning / Ideas
 
-- [ ] Implement the white list user in the database => registration
 - [ ] Implement the authentifcation flow in back => authentification
 - [ ] Implement the reservartion flow => reservation
 - [ ] Implement the lock row method => every user have one seat => reservation
@@ -39,7 +38,10 @@
 
 ### 🛠️ Doing
 
-- [ ] Implement the folder structure
+- [ ] Implement the white list user in the database => registration
+    - [X] Create User in the database in White list table
+    - [ ] List all users that in the white list 
+
 ---
 
 ### ✔️ Done
@@ -51,6 +53,7 @@
 - [X] Setup Docker compose file for the pg database
 - [X] Implement the seed data in prisma
 - [X] Add Enum of role Admin , User
+- [X] Implement the folder structure
 
 ---
 
