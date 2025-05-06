@@ -18,6 +18,7 @@
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] As new member it should take the Employe Role => registration
 - [ ] I need to be verified to make the registration => registration
+- [ ] Check the reservation number is less or equal than the number of seats of the bus
 
 
 => Deadline 17/05/2025
@@ -41,6 +42,7 @@
 - [ ] Implement the white list user in the database => registration
     - [X] Create User in the database in White list table
     - [ ] List all users that in the white list 
+    - [ ] Delete a user in the white list 
 
 ---
 
@@ -74,7 +76,8 @@
 
 ###  Notes
 
-The route folder will be like this :
--   Admin file => will be the route of admin
--   Authentifcation file => will be the route of registration and login
--   reservation file => will be the flow of the reservation   
+-The route folder will be like this :
+    -   Admin file => will be the route of admin
+    -   Authentifcation file => will be the route of registration and login
+    -   reservation file => will be the flow of the reservation   
+-Probably the authentification will be last thing ? 
