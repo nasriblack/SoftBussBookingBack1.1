@@ -43,6 +43,7 @@
     - [X] Create User in the database in White list table
     - [X] List all users that in the white list 
     - [ ] Delete a user in the white list 
+    - [ ] Check if user Exist in white list ( by email ? or by id?) 
 
 ---
 
