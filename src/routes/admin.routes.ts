@@ -12,5 +12,10 @@ adminRouter.get(
   endPoint.Admin.LIST_ALL_USERS,
   AdminController.ListAllUserInWhiteList
 );
+adminRouter.delete(
+  endPoint.Admin.DELETE_USER,
+  AdminController.checkExistingUser,
+  AdminController.DeleteUserInWhiteList
+);
 
 export default adminRouter;

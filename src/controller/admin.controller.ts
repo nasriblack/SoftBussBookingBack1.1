@@ -1,8 +1,27 @@
 import { NextFunction, Response, Request } from "express";
 import * as adminService from "../services/admin.service";
-import { sendSuccessResponse } from "../utils/responseHandler";
+import {
+  sendNotFoundResponse,
+  sendSuccessResponse,
+} from "../utils/responseHandler";
 import HttpStatusCode from "../utils/httpStatusCode";
 
+export const checkExistingUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = Number(request.params.id);
+    const isUserExist = await adminService.CheckIfUserExist(userId);
+    if (!isUserExist) {
+      return sendNotFoundResponse(response, "User Not Found");
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
 export const AddUserInWhiteLIst = async (
   request: Request,
   response: Response,
@@ -20,4 +39,18 @@ export const ListAllUserInWhiteList = async (
 ): Promise<any> => {
   const usersWhiteList = await adminService.ListAllUserInWhiteList();
   return sendSuccessResponse(response, usersWhiteList, HttpStatusCode.OK);
+};
+
+export const DeleteUserInWhiteList = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = Number(request.params.id);
+    await adminService.DeleteUserInWhiteList(userId);
+    return sendSuccessResponse(response, "User has been deleted");
+  } catch (error) {
+    next(error);
+  }
 };

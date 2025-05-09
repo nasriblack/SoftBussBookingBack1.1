@@ -23,3 +23,31 @@ export const ListAllUserInWhiteList = async (): Promise<IListWhiteUser[]> => {
     },
   });
 };
+
+export const DeleteUserInWhiteList = async (
+  userId: number
+): Promise<IListWhiteUser> => {
+  return prismaClient.whiteListUser.delete({
+    where: {
+      id: userId,
+    },
+    select: {
+      email: true,
+      id: true,
+    },
+  });
+};
+
+export const CheckIfUserExist = async (
+  userId: number
+): Promise<IListWhiteUser | null> => {
+  return prismaClient.whiteListUser.findUnique({
+    where: {
+      id: userId,
+    },
+    select: {
+      email: true,
+      id: true,
+    },
+  });
+};
