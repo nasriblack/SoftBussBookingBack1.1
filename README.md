@@ -41,7 +41,7 @@
 
 - [ ] Implement the white list user in the database => registration
     - [X] Create User in the database in White list table
-    - [ ] List all users that in the white list 
+    - [X] List all users that in the white list 
     - [ ] Delete a user in the white list 
 
 ---

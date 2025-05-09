@@ -8,5 +8,9 @@ adminRouter.post(
   endPoint.Admin.WHITE_LIST_USERS,
   AdminController.AddUserInWhiteLIst
 );
+adminRouter.get(
+  endPoint.Admin.LIST_ALL_USERS,
+  AdminController.ListAllUserInWhiteList
+);
 
 export default adminRouter;

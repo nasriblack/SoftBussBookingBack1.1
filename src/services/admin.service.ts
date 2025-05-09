@@ -14,3 +14,12 @@ export const AddUserInWhiteList = async (
     },
   });
 };
+
+export const ListAllUserInWhiteList = async (): Promise<IListWhiteUser[]> => {
+  return prismaClient.whiteListUser.findMany({
+    select: {
+      email: true,
+      id: true,
+    },
+  });
+};
