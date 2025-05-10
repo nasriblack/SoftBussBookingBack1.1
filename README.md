@@ -40,7 +40,6 @@
 
 ### 🛠️ Doing
 
-- [ ] As USER i can see the reservation list => reservation
 
 ---
 
@@ -60,6 +59,7 @@
     - [X] Delete a user in the white list 
     - [X] Check if user Exist in white list ( by email ? or by id?) 
 - [X] it will have an Admin , User as role
+- [X] As USER i can see the reservation list => reservation
 
 ---
 
