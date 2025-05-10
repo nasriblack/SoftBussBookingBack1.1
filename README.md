@@ -64,7 +64,9 @@
 ---
 
 ### 📘 What I Learned
-
+## Prisma
+- There is no need to make type in different file , just import the type directly from your prisma client
+- in case of relation do not make every attribute true true just make the name of the value to true and it will import the whole fields
 
 
 ---

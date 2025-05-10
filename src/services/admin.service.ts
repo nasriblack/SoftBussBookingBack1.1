@@ -1,5 +1,6 @@
 import { prismaClient } from "../utils/prisma";
 import { IListWhiteUser } from "../models/IListWhiteUser";
+import { Reservation } from "@prisma/client";
 
 export const AddUserInWhiteList = async (
   user: any
@@ -48,6 +49,32 @@ export const CheckIfUserExist = async (
     select: {
       email: true,
       id: true,
+    },
+  });
+};
+
+export const GetReservationList = async (): Promise<Reservation[]> => {
+  return prismaClient.reservation.findMany({
+    select: {
+      id: true,
+      reservedAt: true,
+      seat: {
+        select: {
+          bus: {
+            select: {
+              destination: true,
+            },
+          },
+          number: true,
+        },
+      },
+      seatId: true,
+      userId: true,
+      user: {
+        select: {
+          email: true,
+        },
+      },
     },
   });
 };

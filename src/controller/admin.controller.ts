@@ -54,3 +54,16 @@ export const DeleteUserInWhiteList = async (
     next(error);
   }
 };
+
+export const GetReservationListController = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const reservationList = await adminService.GetReservationList();
+    return sendSuccessResponse(response, reservationList, HttpStatusCode.OK);
+  } catch (error) {
+    next(error);
+  }
+};

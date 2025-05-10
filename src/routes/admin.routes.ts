@@ -18,4 +18,9 @@ adminRouter.delete(
   AdminController.DeleteUserInWhiteList
 );
 
+adminRouter.get(
+  endPoint.Reservation.GET_ALL_RESERVATION,
+  AdminController.GetReservationListController
+);
+
 export default adminRouter;

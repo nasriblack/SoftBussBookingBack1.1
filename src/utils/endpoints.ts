@@ -4,6 +4,9 @@ export const endPoint = {
     LIST_ALL_USERS: "/allusers",
     DELETE_USER: "/user/:id",
   },
+  Reservation: {
+    GET_ALL_RESERVATION: "/reservations",
+  },
 };
 
 export const apiVersion = "/api/v1";
