@@ -7,17 +7,19 @@
 - [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
 - [ ] Check if the user have his name in the whitelist db => registration
 - [ ] Imeplement the token with the right way and safe way => authentification
-- [ ] as user i want cancel my reservartion => reservation
 - [ ] Implement the method in case of many user choose one seat at once => reservation
 - [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
 - [ ] as Admin i must verify the user after his registration => Admin
-- [ ] As user i can see the reservation list => reservation
 - [ ] Implement the lock row method
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] As new member it should take the Employe Role => registration
 - [ ] I need to be verified to make the registration => registration
 - [ ] Check the reservation number is less or equal than the number of seats of the bus
+- [ ] How to check if the seat of the bus is taken or not ? => reservation
+    - [ ] Add in Seat Schema isTaken boolean
+    - [ ] Implement a cron job to delete the isTaken and return it to false in time
+    - [ ] as user i want cancel my reservartion (isTaken) will be false => reservation ( BUT    HERE IN PRISMA MODEL WE HAVE UNIQUE FIELD WHICH IS REFERT TO THE USER)
 
 
 => Deadline 17/05/2025
@@ -38,6 +40,7 @@
 
 ### 🛠️ Doing
 
+- [ ] As USER i can see the reservation list => reservation
 
 ---
 
@@ -81,4 +84,7 @@
     -   Admin file => will be the route of admin
     -   Authentifcation file => will be the route of registration and login
     -   reservation file => will be the flow of the reservation   
--Probably the authentification will be last thing ? 
+-Probably the authentification will be last thing ?
+-Thinking about making the reservation with giving a random id ? or should i make the authenficiation first ? 
+-i think i am gonne make the authentification first then i will made the reservation 
+-first i am gonna make the create Bus then seats
