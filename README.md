@@ -9,7 +9,6 @@
 - [ ] Imeplement the token with the right way and safe way => authentification
 - [ ] as user i want cancel my reservartion => reservation
 - [ ] Implement the method in case of many user choose one seat at once => reservation
-- [ ] it will have an Admin , User as role
 - [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
 - [ ] as Admin i must verify the user after his registration => Admin
 - [ ] As user i can see the reservation list => reservation
@@ -57,6 +56,7 @@
     - [X] List all users that in the white list 
     - [X] Delete a user in the white list 
     - [X] Check if user Exist in white list ( by email ? or by id?) 
+- [X] it will have an Admin , User as role
 
 ---
 
