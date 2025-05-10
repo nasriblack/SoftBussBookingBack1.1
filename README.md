@@ -39,11 +39,6 @@
 
 ### 🛠️ Doing
 
-- [ ] Implement the white list user in the database => registration
-    - [X] Create User in the database in White list table
-    - [X] List all users that in the white list 
-    - [X] Delete a user in the white list 
-    - [X] Check if user Exist in white list ( by email ? or by id?) 
 
 ---
 
@@ -57,6 +52,11 @@
 - [X] Implement the seed data in prisma
 - [X] Add Enum of role Admin , User
 - [X] Implement the folder structure
+- [X] Implement the white list user in the database => registration
+    - [X] Create User in the database in White list table
+    - [X] List all users that in the white list 
+    - [X] Delete a user in the white list 
+    - [X] Check if user Exist in white list ( by email ? or by id?) 
 
 ---
 
