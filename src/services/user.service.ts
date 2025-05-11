@@ -17,3 +17,20 @@ export const createReservation = async (
     },
   });
 };
+
+export const checkSeatStatus = async (
+  seatId: string
+): Promise<Reservation | null> => {
+  return prismaClient.reservation.findFirst({
+    where: {
+      seat: seatId,
+    },
+    select: {
+      destination: true,
+      seat: true,
+      userId: true,
+      reservedAt: true,
+      id: true,
+    },
+  });
+};
