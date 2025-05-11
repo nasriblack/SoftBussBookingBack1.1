@@ -6,6 +6,7 @@ import {
   sendUnauthorizedResponse,
 } from "../utils/responseHandler";
 import HttpStatusCode from "../utils/httpStatusCode";
+import { Destination } from "@prisma/client";
 
 export const reservationBusSeat = async (
   request: Request,
@@ -50,6 +51,21 @@ export const checkReservationByUser = async (
       sendBadRequestResponse(response, "This user have a seat");
     }
     next();
+  } catch (error) {
+    next(error);
+  }
+};
+export const getTodayReservation = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const destination = request.params.destination;
+    const todayReservation = await userService.getTodayBookingList(
+      destination as Destination
+    );
+    return sendSuccessResponse(response, todayReservation, HttpStatusCode.OK);
   } catch (error) {
     next(error);
   }

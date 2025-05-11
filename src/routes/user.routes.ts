@@ -13,4 +13,9 @@ userRoutes.post(
   UserController.reservationBusSeat
 );
 
+userRoutes.get(
+  endPoint.Reservation.GET_TODAY_RESERVATION,
+  UserController.getTodayReservation
+);
+
 export default userRoutes;

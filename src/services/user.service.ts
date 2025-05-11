@@ -1,5 +1,6 @@
 import { Destination, Reservation } from "@prisma/client";
 import { prismaClient } from "../utils/prisma";
+import { todayEnd, todayStart } from "../utils/const";
 
 export const createReservation = async (
   reservationPayload: any
@@ -47,6 +48,34 @@ export const checkUserSeat = async (
       userId: true,
       reservedAt: true,
       id: true,
+    },
+  });
+};
+
+export const getTodayBookingList = async (
+  destination: Destination
+): Promise<Reservation[]> => {
+  return prismaClient.reservation.findMany({
+    where: {
+      reservedAt: {
+        gte: todayStart,
+        lte: todayEnd,
+      },
+      destination: {
+        equals: destination,
+      },
+    },
+    select: {
+      id: true,
+      reservedAt: true,
+      destination: true,
+      seat: true,
+      userId: true,
+      user: {
+        select: {
+          email: true,
+        },
+      },
     },
   });
 };
