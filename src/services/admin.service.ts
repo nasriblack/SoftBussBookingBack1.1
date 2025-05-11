@@ -1,6 +1,6 @@
 import { prismaClient } from "../utils/prisma";
 import { IListWhiteUser } from "../models/IListWhiteUser";
-import { Reservation } from "@prisma/client";
+import { Reservation, User } from "@prisma/client";
 
 export const AddUserInWhiteList = async (
   user: any
@@ -39,7 +39,7 @@ export const DeleteUserInWhiteList = async (
   });
 };
 
-export const CheckIfUserExist = async (
+export const CheckIfWhiteListUserExist = async (
   userId: number
 ): Promise<IListWhiteUser | null> => {
   return prismaClient.whiteListUser.findUnique({
@@ -49,6 +49,22 @@ export const CheckIfUserExist = async (
     select: {
       email: true,
       id: true,
+    },
+  });
+};
+export const CheckIfUserExist = async (
+  userId: string
+): Promise<User | null> => {
+  return prismaClient.user.findUnique({
+    where: {
+      id: userId,
+    },
+    select: {
+      email: true,
+      id: true,
+      isVerified: true,
+      reservations: true,
+      role: true,
     },
   });
 };

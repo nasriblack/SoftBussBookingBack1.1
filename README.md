@@ -47,6 +47,7 @@
         - [X] i can make a reservation with simple ( no middelware)
         - [X] i can't take already reserved seat
         - [X] i can't make double reservation
+        - [X] i can't make reservation if my ID is false
         - [ ] i can't take seat if the bus haven't free seat
 
 ---

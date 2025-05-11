@@ -6,13 +6,29 @@ import {
 } from "../utils/responseHandler";
 import HttpStatusCode from "../utils/httpStatusCode";
 
-export const checkExistingUser = async (
+export const checkExistingUserWhiteList = async (
   request: Request,
   response: Response,
   next: NextFunction
 ): Promise<any> => {
   try {
     const userId = Number(request.params.id);
+    const isUserExist = await adminService.CheckIfWhiteListUserExist(userId);
+    if (!isUserExist) {
+      return sendNotFoundResponse(response, "User Not Found");
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
+export const checkExistingUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = request.body.userId;
     const isUserExist = await adminService.CheckIfUserExist(userId);
     if (!isUserExist) {
       return sendNotFoundResponse(response, "User Not Found");

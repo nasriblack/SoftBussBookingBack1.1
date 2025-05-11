@@ -14,7 +14,7 @@ adminRouter.get(
 );
 adminRouter.delete(
   endPoint.Admin.DELETE_USER,
-  AdminController.checkExistingUser,
+  AdminController.checkExistingUserWhiteList,
   AdminController.DeleteUserInWhiteList
 );
 
