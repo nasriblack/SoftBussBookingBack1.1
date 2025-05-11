@@ -30,24 +30,24 @@ model Bus {
   id          Int         @id @default(autoincrement())
   destination Destination @default(NABEUL)
   name        String
-  seats       Seat[]
+  seatsNumber Int         @default(29)
 }
 
-model Seat {
-  id          Int          @id @default(autoincrement())
-  number      Int
-  busId       Int
-  bus         Bus          @relation(fields: [busId], references: [id])
-  reservation Reservation?
-}
+// model Seat {
+//   id          Int          @id @default(autoincrement())
+//   number      Int
+//   busId       Int
+//   bus         Bus          @relation(fields: [busId], references: [id])
+//   reservation Reservation?
+// }
 
 model Reservation {
   id          Int         @id @default(autoincrement())
-  seatId      Int         @unique
   userId      String
   destination Destination @default(NABEUL)
   reservedAt  DateTime    @default(now())
-  seat        Seat        @relation(fields: [seatId], references: [id])
+  seat        String      @unique
+  // seat        Seat        @relation(fields: [seatId], references: [id])
   user        User        @relation(fields: [userId], references: [id])
 }
 
