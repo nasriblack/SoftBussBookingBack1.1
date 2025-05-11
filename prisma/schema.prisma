@@ -34,16 +34,16 @@ model Bus {
 }
 
 model Seat {
-  id          Int           @id @default(autoincrement())
+  id          Int          @id @default(autoincrement())
   number      Int
   busId       Int
-  bus         Bus           @relation(fields: [busId], references: [id])
-  reservation Reservation[]
+  bus         Bus          @relation(fields: [busId], references: [id])
+  reservation Reservation?
 }
 
 model Reservation {
   id         Int      @id @default(autoincrement())
-  seatId     Int
+  seatId     Int      @unique
   userId     String
   reservedAt DateTime @default(now())
   seat       Seat     @relation(fields: [seatId], references: [id])
@@ -53,4 +53,9 @@ model Reservation {
 enum Role {
   USER
   ADMIN
+}
+
+enum Destination {
+  NABEUL
+  BIZERT
 }
