@@ -40,6 +40,13 @@
 
 ### 🛠️ Doing
 
+- [ ] Implement the reservartion flow => reservation
+    - [ ] Change the seatId to unique in prisma schema
+    - [ ] Add enum of destination
+    - [ ] As user i can make the reservation
+        - [ ] i can't take already reserved seat
+        - [ ] i can't take seat if the bus haven't free seat
+        - [ ] i can't take seat if the bus haven't free seat
 
 ---
 
@@ -90,3 +97,4 @@
 -Thinking about making the reservation with giving a random id ? or should i make the authenficiation first ? 
 -i think i am gonne make the authentification first then i will made the reservation 
 -first i am gonna make the create Bus then seats
+-In reservation post create i will send like this=> seatId, userId that's all but what about the destination ? => i will make the destination enum first in Bus schema , then i will make in reservation destination new field => then in middelware i will check with this destination if the number of seats is still available ? => but how can i see if the bus is having available seats ? 
