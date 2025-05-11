@@ -1,58 +1,93 @@
 import { PrismaClient } from "@prisma/client";
-
 const prisma = new PrismaClient();
 
 async function main() {
-  const whiteListUser = await prisma.whiteListUser.createMany({
-    data: [
-      { email: "john@example1.com" },
-      { email: "john@example2.com" },
-      { email: "john@example3.com" },
-    ],
-  });
-  const bus = await prisma.bus.create({
-    data: {
-      name: "Express 101",
-      destination: "Downtown",
-      seats: {
-        create: [
-          { number: 1 },
-          { number: 2 },
-          { number: 3 },
-          { number: 4 },
-          { number: 5 },
-        ],
-      },
-    },
-    include: {
-      seats: true,
-    },
-  });
-
-  const user = await prisma.user.create({
+  // 1. Create Users
+  const user1 = await prisma.user.create({
     data: {
       email: "john.doe@example.com",
       isVerified: true,
-      reservations: {
-        create: {
-          seat: {
-            connect: {
-              id: bus.seats[0].id, // Seat 1
-            },
-          },
-        },
-      },
     },
   });
 
-  console.log("✅ Nested seeding complete");
+  const user2 = await prisma.user.create({
+    data: {
+      email: "jane.smith@example.com",
+      isVerified: false,
+    },
+  });
+
+  // 2. Whitelist User
+  await prisma.whiteListUser.createMany({
+    data: [
+      { email: "allowed.user1@example.com" },
+      { email: "allowed.user2@example.com" },
+    ],
+  });
+
+  // 3. Create Buses
+  const busA = await prisma.bus.create({
+    data: {
+      name: "Bus A",
+      destination: "NABEUL",
+    },
+  });
+
+  const busB = await prisma.bus.create({
+    data: {
+      name: "Bus B",
+      destination: "BIZERT",
+    },
+  });
+
+  // 4. Create Seats for each bus
+  const seatsA = await prisma.seat.createMany({
+    data: [
+      { number: 1, busId: busA.id },
+      { number: 2, busId: busA.id },
+    ],
+  });
+
+  const seatsB = await prisma.seat.createMany({
+    data: [
+      { number: 1, busId: busB.id },
+      { number: 2, busId: busB.id },
+    ],
+  });
+
+  // 5. Create Reservations
+  const seatA1 = await prisma.seat.findFirst({
+    where: { busId: busA.id, number: 1 },
+  });
+  const seatB2 = await prisma.seat.findFirst({
+    where: { busId: busB.id, number: 2 },
+  });
+
+  if (seatA1 && seatB2) {
+    await prisma.reservation.createMany({
+      data: [
+        {
+          userId: user1.id,
+          seatId: seatA1.id,
+          destination: "NABEUL",
+        },
+        {
+          userId: user2.id,
+          seatId: seatB2.id,
+          destination: "BIZERT",
+        },
+      ],
+    });
+  }
+
+  console.log("✅ Seed completed");
 }
 
 main()
   .catch((e) => {
-    console.error("❌ Seed failed", e);
+    console.error(e);
     process.exit(1);
   })
-  .finally(() => {
-    prisma.$disconnect();
+  .finally(async () => {
+    await prisma.$disconnect();
   });
