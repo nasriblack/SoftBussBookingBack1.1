@@ -8,18 +8,11 @@
 - [ ] Check if the user have his name in the whitelist db => registration
 - [ ] Imeplement the token with the right way and safe way => authentification
 - [ ] Implement the method in case of many user choose one seat at once => reservation
-- [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
-- [ ] as Admin i must verify the user after his registration => Admin
 - [ ] Implement the lock row method
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] As new member it should take the Employe Role => registration
-- [ ] I need to be verified to make the registration => registration
-- [ ] Check the reservation number is less or equal than the number of seats of the bus
-- [ ] How to check if the seat of the bus is taken or not ? => reservation
-    - [ ] Add in Seat Schema isTaken boolean
-    - [ ] Implement a cron job to delete the isTaken and return it to false in time
-    - [ ] as user i want cancel my reservartion (isTaken) will be false => reservation ( BUT    HERE IN PRISMA MODEL WE HAVE UNIQUE FIELD WHICH IS REFERT TO THE USER)
+
 
 
 => Deadline 17/05/2025
@@ -35,19 +28,17 @@
 ---
 
 ### ✅ To Do
+- [ ] as user i can cancel my reservation
+- [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
+- [ ] as Admin i must verify the user after his registration => Admin
+- [ ] I need to be verified to make the registration => registration
+- [ ] Check the reservation number is less or equal than the number of seats of the bus
+
 
 ---
 
 ### 🛠️ Doing
 
-- [ ] Implement the reservartion flow => reservation
-    - [X] Change the seatId to unique in prisma schema
-    - [X] Add enum of destination
-    - [ ] As user i can make the reservation
-        - [X] i can make a reservation with simple ( no middelware)
-        - [X] i can't take already reserved seat
-        - [X] i can't make double reservation
-        - [X] i can't make reservation if my ID is false
 
 ---
 
@@ -68,6 +59,14 @@
     - [X] Check if user Exist in white list ( by email ? or by id?) 
 - [X] it will have an Admin , User as role
 - [X] As USER i can see the reservation list => reservation
+- [X] Implement the reservartion flow => reservation
+    - [X] Change the seatId to unique in prisma schema
+    - [X] Add enum of destination
+    - [X] As user i can make the reservation
+        - [X] i can make a reservation with simple ( no middelware)
+        - [X] i can't take already reserved seat
+        - [X] i can't make double reservation
+        - [X] i can't make reservation if my ID is false
 
 ---
 
