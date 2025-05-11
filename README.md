@@ -75,6 +75,12 @@
 - There is no need to make type in different file , just import the type directly from your prisma client
 - in case of relation do not make every attribute true true just make the name of the value to true and it will import the whole fields
 
+- Change of schema prisma
+1- pnpm prisma generate
+2- pnpm prisma migrate dev --name your_migration_name
+3- Optional : pnpm prisma db seed
+4- Optional : pnpm prisma studio
+
 
 ---
 
