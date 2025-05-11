@@ -6,6 +6,7 @@ const userRoutes: Router = express.Router();
 
 userRoutes.post(
   endPoint.Reservation.ADD_RESERVATION,
+  UserController.checkReservationByUser,
   UserController.checkReservationBySeat,
   UserController.reservationBusSeat
 );

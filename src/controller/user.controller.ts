@@ -37,3 +37,20 @@ export const checkReservationBySeat = async (
     next(error);
   }
 };
+export const checkReservationByUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = request.body.userId;
+    console.log("checking the userID", userId);
+    const existingReservation = await userService.checkUserSeat(userId);
+    if (existingReservation) {
+      sendBadRequestResponse(response, "This user have a seat");
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
