@@ -1,6 +1,7 @@
 import { prismaClient } from "../utils/prisma";
 import { IListWhiteUser } from "../models/IListWhiteUser";
 import { Reservation, User } from "@prisma/client";
+import { oneMonthAgo } from "../utils/const";
 
 export const AddUserInWhiteList = async (
   user: any
@@ -71,6 +72,11 @@ export const CheckIfUserExist = async (
 
 export const GetReservationList = async (): Promise<Reservation[]> => {
   return prismaClient.reservation.findMany({
+    where: {
+      reservedAt: {
+        gte: oneMonthAgo,
+      },
+    },
     select: {
       id: true,
       reservedAt: true,
