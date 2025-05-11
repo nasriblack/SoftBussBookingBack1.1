@@ -44,8 +44,8 @@
     - [X] Change the seatId to unique in prisma schema
     - [X] Add enum of destination
     - [ ] As user i can make the reservation
+        - [X] i can make a reservation with simple ( no middelware)
         - [ ] i can't take already reserved seat
-        - [ ] i can't take seat if the bus haven't free seat
         - [ ] i can't take seat if the bus haven't free seat
 
 ---
