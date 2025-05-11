@@ -6,6 +6,7 @@ export const endPoint = {
   },
   Reservation: {
     GET_ALL_RESERVATION: "/reservations",
+    ADD_RESERVATION: "/reservation",
   },
 };
 
