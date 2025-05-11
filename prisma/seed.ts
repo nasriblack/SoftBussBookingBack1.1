@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
+
 const prisma = new PrismaClient();
 
 async function main() {
-  // 1. Create Users
+  // Seed Users
   const user1 = await prisma.user.create({
     data: {
       email: "john.doe@example.com",
@@ -17,70 +18,40 @@ async function main() {
     },
   });
 
-  // 2. Whitelist User
-  await prisma.whiteListUser.createMany({
-    data: [
-      { email: "allowed.user1@example.com" },
-      { email: "allowed.user2@example.com" },
-    ],
-  });
-
-  // 3. Create Buses
-  const busA = await prisma.bus.create({
+  // Seed Buses
+  const bus1 = await prisma.bus.create({
     data: {
-      name: "Bus A",
+      name: "Bus to Nabeul",
       destination: "NABEUL",
+      seatsNumber: 4,
     },
   });
 
-  const busB = await prisma.bus.create({
+  const bus2 = await prisma.bus.create({
     data: {
-      name: "Bus B",
+      name: "Bus to Bizert",
       destination: "BIZERT",
+      seatsNumber: 3,
     },
   });
 
-  // 4. Create Seats for each bus
-  const seatsA = await prisma.seat.createMany({
+  // Seed Reservations
+  await prisma.reservation.createMany({
     data: [
-      { number: 1, busId: busA.id },
-      { number: 2, busId: busA.id },
+      {
+        userId: user1.id,
+        seat: "SA1",
+        destination: "NABEUL",
+      },
+      {
+        userId: user2.id,
+        seat: "SA2",
+        destination: "NABEUL",
+      },
     ],
   });
 
-  const seatsB = await prisma.seat.createMany({
-    data: [
-      { number: 1, busId: busB.id },
-      { number: 2, busId: busB.id },
-    ],
-  });
-
-  // 5. Create Reservations
-  const seatA1 = await prisma.seat.findFirst({
-    where: { busId: busA.id, number: 1 },
-  });
-  const seatB2 = await prisma.seat.findFirst({
-    where: { busId: busB.id, number: 2 },
-  });
-
-  if (seatA1 && seatB2) {
-    await prisma.reservation.createMany({
-      data: [
-        {
-          userId: user1.id,
-          seatId: seatA1.id,
-          destination: "NABEUL",
-        },
-        {
-          userId: user2.id,
-          seatId: seatB2.id,
-          destination: "BIZERT",
-        },
-      ],
-    });
-  }
-
-  console.log("✅ Seed completed");
+  console.log("✅ Seeding completed");
 }
 
 main()
