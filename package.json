@@ -8,6 +8,7 @@
     "clean": "rm -rd dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/server.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
+    "clear_database": "ts-node prisma/clear_database.ts",
     "prisma:seed": "ts-node prisma/seed.ts"
   },
   "keywords": [
