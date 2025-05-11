@@ -41,8 +41,8 @@
 ### 🛠️ Doing
 
 - [ ] Implement the reservartion flow => reservation
-    - [ ] Change the seatId to unique in prisma schema
-    - [ ] Add enum of destination
+    - [X] Change the seatId to unique in prisma schema
+    - [X] Add enum of destination
     - [ ] As user i can make the reservation
         - [ ] i can't take already reserved seat
         - [ ] i can't take seat if the bus haven't free seat
@@ -104,3 +104,22 @@
 -i think i am gonne make the authentification first then i will made the reservation 
 -first i am gonna make the create Bus then seats
 -In reservation post create i will send like this=> seatId, userId that's all but what about the destination ? => i will make the destination enum first in Bus schema , then i will make in reservation destination new field => then in middelware i will check with this destination if the number of seats is still available ? => but how can i see if the bus is having available seats ? 
+
+Reservation Flow => will be like this
+```json
+{
+  "userId": "a5b8c3d9-2f9a-4b15-b8e4-1a2d3f4e5c6b",
+  "seatId": 12,
+  "destination": "NABEUL"
+}
+```
+- so the workflow of the create reservation will be like this => the user connected will be send in the payload with the userId , 
+- the seatId will be the send in the payload , the user connected will be select and click on the seat to detect the seatId and the destination will be selected or clicked first when the user click on the destination 
+- the seats will be in the UI coming from the the Bus seatsNumber ? but how ? ah without the seatId => seatsNumber for example => 29 => i am gonna make loop throught the seatsNumber => the user select the seat and send the number so it will be like 
+```json
+{
+  "userId": "some-uuid",
+  "seat": "SA1",
+  "destination": "NABEUL"
+}
+```
