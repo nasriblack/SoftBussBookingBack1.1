@@ -40,7 +40,7 @@
 ### 🛠️ Doing
 
 - [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
-- [ ] List the reservation 
+- [ ] list the booking list of today ( what if after 00H he will make the booking ?) 
 
 ---
 
