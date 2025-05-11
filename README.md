@@ -39,7 +39,7 @@
 
 ### 🛠️ Doing
 
-- [ ] list the booking list of today ( what if after 00H he will make the booking ?) 
+
 
 ---
 
@@ -69,6 +69,7 @@
         - [X] i can't make double reservation
         - [X] i can't make reservation if my ID is false
 - [X] as Admin i must see the list of booking of the bus of 1 month ago => Admin
+- [X] list the booking list of today ( what if after 00H he will make the booking ?) 
 
 ---
 
