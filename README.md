@@ -29,16 +29,18 @@
 
 ### ✅ To Do
 - [ ] as user i can cancel my reservation
-- [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
 - [ ] as Admin i must verify the user after his registration => Admin
 - [ ] I need to be verified to make the registration => registration
 - [ ] Check the reservation number is less or equal than the number of seats of the bus
+- [ ] The seat will be like this today_date_S1 (with the 1 is the id of the seat)
 
 
 ---
 
 ### 🛠️ Doing
 
+- [ ] as Admin i must see the list of booking of the bus of 1 month ago => Admin
+- [ ] List the reservation 
 
 ---
 
@@ -123,3 +125,7 @@ Reservation Flow => will be like this
   "destination": "NABEUL"
 }
 ```
+
+
+- okay if the reservation will be stored and the admin wanna see the one month reservation for example ! how can i acheive this ? => here when i make the get reservation i get the 
+data without any condition => the seat place will be the date of today with the number ( coming from the front) => 
