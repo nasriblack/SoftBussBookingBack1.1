@@ -58,17 +58,8 @@ export const GetReservationList = async (): Promise<Reservation[]> => {
     select: {
       id: true,
       reservedAt: true,
-      seat: {
-        select: {
-          bus: {
-            select: {
-              destination: true,
-            },
-          },
-          number: true,
-        },
-      },
-      seatId: true,
+      destination: true,
+      seat: true,
       userId: true,
       user: {
         select: {
