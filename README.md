@@ -35,8 +35,7 @@
 
 ### 🛠️ Doing
 
-- [ ] as user i can cancel my reservation => of today
-
+- [ ] US001- as user i can cancel my reservation => of todays
 
 
 
@@ -154,6 +153,9 @@ data without any condition => the seat place will be the date of today with the 
 -SN: SEAT OF NABEUL DESTINATION
 DATE
 Number of seat
+
+US-001 =>send the userId ! => check existing userId => question here ? => how to decrement the seat Number =><b>solution</b> from the front ! => i will always make the get of the reservartion of today when when i see a seat for example a seat 24 dosen't have any reservartion it will be empty or free to take ! => delete reservartion from the data  
+        
 
 ###  BUG
 
