@@ -35,12 +35,7 @@
 
 ### 🛠️ Doing
 
-- [ ] US001- as user i can cancel my reservation => of todays
-      -[X] check existing userId
-      -[X] add isCanceled att to schema
-      -[X] update the reservartion !
-      -[X] new router
-      -[X] new controller function and service function  
+  
 
 
 
@@ -81,6 +76,13 @@
   - [X] creation route of the update user verification
   - [X] creation controller & service to update the user 
   - [X] check the userId before the update 
+
+- [X] US001- as user i can cancel my reservation => of todays
+    -[X] check existing userId
+    -[X] add isCanceled att to schema
+    -[X] update the reservartion !
+    -[X] new router
+    -[X] new controller function and service function
 
 
 ---
