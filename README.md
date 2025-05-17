@@ -29,7 +29,6 @@
 
 ### ✅ To Do
 - [ ] as user i can cancel my reservation => of today
-- [ ] as Admin i must verify the user after his registration => Admin
 
 
 
@@ -37,6 +36,10 @@
 
 ### 🛠️ Doing
 
+- [ ] as Admin i can update the verification of the user => Admin
+  - [ ] creation route of the update user verification
+  - [ ] creation controller & service to update the user 
+  - [ ] check the userId before the update 
 
 
 

@@ -23,4 +23,9 @@ adminRouter.get(
   AdminController.GetReservationListController
 );
 
+adminRouter.put(
+  endPoint.Admin.VERIFY_USER,
+  AdminController.UpdateVerificationUser
+);
+
 export default adminRouter;

@@ -99,3 +99,19 @@ export const GetReservationListController = async (
     next(error);
   }
 };
+
+export const UpdateVerificationUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = request.params.id;
+    const userPayload = request.body;
+
+    await adminService.UpdateVerificationUser(userId, userPayload);
+    return sendSuccessResponse(response, [], HttpStatusCode.ACCEPTED);
+  } catch (error) {
+    next(error);
+  }
+};
