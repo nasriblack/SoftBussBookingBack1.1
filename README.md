@@ -39,8 +39,7 @@
 
 ### 🛠️ Doing
 
-- [ ] US001-Check the reservation number is less or equal than the number of seats of the bus => today date !!
-  - [ ] US001-1 - make a middleware before the reservation , after we check the userId => this middleware is for check the length of the reservation date => it exist in front !!!! the seats 
+- [ ] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
 
 
 ---

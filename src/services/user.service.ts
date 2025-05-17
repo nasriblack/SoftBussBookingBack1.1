@@ -25,6 +25,10 @@ export const checkSeatStatus = async (
   return prismaClient.reservation.findFirst({
     where: {
       seat: seatId,
+      reservedAt: {
+        gte: todayStart,
+        lte: todayEnd,
+      },
     },
     select: {
       destination: true,
@@ -41,6 +45,10 @@ export const checkUserSeat = async (
   return prismaClient.reservation.findFirst({
     where: {
       userId: userId,
+      reservedAt: {
+        gte: todayStart,
+        lte: todayEnd,
+      },
     },
     select: {
       destination: true,
