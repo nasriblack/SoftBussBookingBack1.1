@@ -37,7 +37,6 @@
 
 ### 🛠️ Doing
 
-- [ ] I need to be verified to make the reservartion => reservartion
 
 
 
@@ -73,6 +72,8 @@
 
 - [X] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
 - [X] The seat will be like this SN-today_date_SEAT_NUMBER 
+- [X] I need to be verified to make the reservartion => reservartion
+
 
 
 ---
