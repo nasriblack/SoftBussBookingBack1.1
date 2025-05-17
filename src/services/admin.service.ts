@@ -69,6 +69,23 @@ export const CheckIfUserExist = async (
     },
   });
 };
+export const CheckIfVerifiedUser = async (
+  userId: string
+): Promise<User | null> => {
+  return prismaClient.user.findUnique({
+    where: {
+      id: userId,
+      isVerified: true,
+    },
+    select: {
+      email: true,
+      id: true,
+      isVerified: true,
+      reservations: true,
+      role: true,
+    },
+  });
+};
 
 export const GetReservationList = async (): Promise<Reservation[]> => {
   return prismaClient.reservation.findMany({

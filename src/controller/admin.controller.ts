@@ -38,6 +38,22 @@ export const checkExistingUser = async (
     next(error);
   }
 };
+export const checkVerifiedUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userId = request.body.userId;
+    const isVerifiedUser = await adminService.CheckIfVerifiedUser(userId);
+    if (!isVerifiedUser) {
+      return sendNotFoundResponse(response, "This user is not verified");
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
 export const AddUserInWhiteLIst = async (
   request: Request,
   response: Response,
