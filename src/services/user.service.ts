@@ -36,6 +36,8 @@ export const checkSeatStatus = async (
       userId: true,
       reservedAt: true,
       id: true,
+      isCanceled: true,
+      updatedAt: true,
     },
   });
 };
@@ -56,6 +58,8 @@ export const checkUserSeat = async (
       userId: true,
       reservedAt: true,
       id: true,
+      isCanceled: true,
+      updatedAt: true,
     },
   });
 };
@@ -79,11 +83,32 @@ export const getTodayBookingList = async (
       destination: true,
       seat: true,
       userId: true,
+      isCanceled: true,
+      updatedAt: true,
+
       user: {
         select: {
           email: true,
         },
       },
+    },
+  });
+};
+
+export const cancelMyReservation = async (
+  payloadReservartion: any
+): Promise<any> => {
+  return prismaClient.reservation.update({
+    where: {
+      id: payloadReservartion.id,
+      userId: payloadReservartion.userId,
+      reservedAt: {
+        gte: todayStart,
+        lte: todayEnd,
+      },
+    },
+    data: {
+      isCanceled: payloadReservartion.isCanceled,
     },
   });
 };

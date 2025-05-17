@@ -69,3 +69,17 @@ export const getTodayReservation = async (
     next(error);
   }
 };
+
+export const cancelReservartion = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const payloadRequest = request.body;
+    await userService.cancelMyReservation(payloadRequest);
+    return sendSuccessResponse(response, [], HttpStatusCode.ACCEPTED);
+  } catch (error) {
+    next(error);
+  }
+};

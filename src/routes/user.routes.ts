@@ -19,4 +19,10 @@ userRoutes.get(
   UserController.getTodayReservation
 );
 
+userRoutes.put(
+  endPoint.Reservation.CANCEL_RESERVARTION,
+  AdminController.checkExistingUser,
+  UserController.cancelReservartion
+);
+
 export default userRoutes;

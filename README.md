@@ -36,6 +36,11 @@
 ### 🛠️ Doing
 
 - [ ] US001- as user i can cancel my reservation => of todays
+      -[X] check existing userId
+      -[X] add isCanceled att to schema
+      -[X] update the reservartion !
+      -[X] new router
+      -[X] new controller function and service function  
 
 
 
@@ -154,7 +159,8 @@ data without any condition => the seat place will be the date of today with the 
 DATE
 Number of seat
 
-US-001 =>send the userId ! => check existing userId => question here ? => how to decrement the seat Number =><b>solution</b> from the front ! => i will always make the get of the reservartion of today when when i see a seat for example a seat 24 dosen't have any reservartion it will be empty or free to take ! => delete reservartion from the data  
+US-001 =>send the userId ! => check existing userId => question here ? => how to decrement the seat Number =><b>solution</b> from the front ! => i will always make the get of the reservartion of today when when i see a seat for example a seat 24 dosen't have any reservartion it will be empty or free to take ! => delete reservartion from the data  ====>
+i will add a isCanceled and i will put it to false as default and when the user want to cancel this value will be true! to keep everything on the database
         
 
 ###  BUG

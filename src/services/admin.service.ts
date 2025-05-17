@@ -100,6 +100,8 @@ export const GetReservationList = async (): Promise<Reservation[]> => {
       destination: true,
       seat: true,
       userId: true,
+      isCanceled: true,
+      updatedAt: true,
       user: {
         select: {
           email: true,
