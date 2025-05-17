@@ -31,7 +31,6 @@
 - [ ] as user i can cancel my reservation
 - [ ] as Admin i must verify the user after his registration => Admin
 - [ ] I need to be verified to make the registration => registration
-- [ ] Check the reservation number is less or equal than the number of seats of the bus
 - [ ] The seat will be like this today_date_S1 (with the 1 is the id of the seat)
 - [ ] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
 
@@ -40,6 +39,7 @@
 
 ### 🛠️ Doing
 
+- [ ] Check the reservation number is less or equal than the number of seats of the bus => today date !!
 
 
 ---
