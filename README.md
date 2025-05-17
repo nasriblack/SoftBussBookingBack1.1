@@ -28,10 +28,8 @@
 ---
 
 ### ✅ To Do
-- [ ] as user i can cancel my reservation
+- [ ] as user i can cancel my reservation => of today
 - [ ] as Admin i must verify the user after his registration => Admin
-- [ ] I need to be verified to make the registration => registration
-- [ ] The seat will be like this today_date_S1 (with the 1 is the id of the seat)
 
 
 
@@ -39,6 +37,7 @@
 
 ### 🛠️ Doing
 
+- [ ] I need to be verified to make the reservartion => reservartion
 
 
 
@@ -73,6 +72,8 @@
 - [X] list the booking list of today ( what if after 00H he will make the booking ?) 
 
 - [X] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
+- [X] The seat will be like this SN-today_date_SEAT_NUMBER 
+
 
 ---
 
