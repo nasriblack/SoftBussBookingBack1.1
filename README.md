@@ -1,17 +1,11 @@
 ### 🧠 Sprint Planning / Ideas
 
-- [ ] Implement the authentifcation flow in back => authentification
-- [ ] Implement the reservartion flow => reservation
 - [ ] Implement the lock row method => every user have one seat => reservation
 - [ ] Implement the WebSocket method to podcast the reservartion name => reservation, WS
 - [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
-- [ ] Check if the user have his name in the whitelist db => registration
-- [ ] Imeplement the token with the right way and safe way => authentification
 - [ ] Implement the method in case of many user choose one seat at once => reservation
-- [ ] Implement the lock row method
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
-- [ ] As new member it should take the Employe Role => registration
 
 
 
@@ -24,6 +18,13 @@
 ---
 
 ### 📥 Backlog
+
+- [ ] Implement the authentifcation flow in back => authentification
+- [ ] Implement the registration of the user => registration
+- [ ] Check if the user have his name in the whitelist db => registration ?
+- [ ] Imeplement the token with the right way and safe way => authentification
+
+
 
 ---
 
