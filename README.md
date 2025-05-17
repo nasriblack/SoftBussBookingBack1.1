@@ -28,7 +28,6 @@
 ---
 
 ### ✅ To Do
-- [ ] as user i can cancel my reservation => of today
 
 
 
@@ -36,10 +35,8 @@
 
 ### 🛠️ Doing
 
-- [X] as Admin i can update the verification of the user => Admin
-  - [X] creation route of the update user verification
-  - [X] creation controller & service to update the user 
-  - [ ] check the userId before the update 
+- [ ] as user i can cancel my reservation => of today
+
 
 
 
@@ -76,7 +73,10 @@
 - [X] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
 - [X] The seat will be like this SN-today_date_SEAT_NUMBER 
 - [X] I need to be verified to make the reservartion => reservartion
-
+- [X] as Admin i can update the verification of the user => Admin
+  - [X] creation route of the update user verification
+  - [X] creation controller & service to update the user 
+  - [X] check the userId before the update 
 
 
 ---
