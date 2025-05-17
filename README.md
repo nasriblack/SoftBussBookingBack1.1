@@ -135,6 +135,20 @@ Reservation Flow => will be like this
 data without any condition => the seat place will be the date of today with the number ( coming from the front) => 
 
 
+- the reservation will be like this 
+
+```json
+{
+  "userId": "some-uuid",
+  "seat": "SN-2025-05-17-22",
+  "destination": "NABEUL"
+}
+```
+
+
+-SN: SEAT OF NABEUL DESTINATION
+DATE
+Number of seat
 
 ###  BUG
 
