@@ -36,9 +36,9 @@
 
 ### 🛠️ Doing
 
-- [ ] as Admin i can update the verification of the user => Admin
-  - [ ] creation route of the update user verification
-  - [ ] creation controller & service to update the user 
+- [X] as Admin i can update the verification of the user => Admin
+  - [X] creation route of the update user verification
+  - [X] creation controller & service to update the user 
   - [ ] check the userId before the update 
 
 

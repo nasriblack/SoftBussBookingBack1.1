@@ -109,13 +109,10 @@ export const GetReservationList = async (): Promise<Reservation[]> => {
   });
 };
 
-export const UpdateVerificationUser = async (
-  userId: string,
-  user: any
-): Promise<User> => {
+export const UpdateVerificationUser = async (user: any): Promise<User> => {
   return prismaClient.user.update({
     where: {
-      id: userId,
+      id: user.userId,
     },
     data: {
       isVerified: user.isVerified,

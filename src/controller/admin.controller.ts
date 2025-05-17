@@ -106,10 +106,9 @@ export const UpdateVerificationUser = async (
   next: NextFunction
 ): Promise<any> => {
   try {
-    const userId = request.params.id;
     const userPayload = request.body;
 
-    await adminService.UpdateVerificationUser(userId, userPayload);
+    await adminService.UpdateVerificationUser(userPayload);
     return sendSuccessResponse(response, [], HttpStatusCode.ACCEPTED);
   } catch (error) {
     next(error);

@@ -25,6 +25,7 @@ adminRouter.get(
 
 adminRouter.put(
   endPoint.Admin.VERIFY_USER,
+  AdminController.checkExistingUser,
   AdminController.UpdateVerificationUser
 );
 
