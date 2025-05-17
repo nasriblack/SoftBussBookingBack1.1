@@ -33,6 +33,7 @@
 - [ ] I need to be verified to make the registration => registration
 - [ ] Check the reservation number is less or equal than the number of seats of the bus
 - [ ] The seat will be like this today_date_S1 (with the 1 is the id of the seat)
+- [ ] BUGFIX : the user will not be able to make a reservation in another date ( should not make a reservation in the same date )
 
 
 ---
@@ -130,3 +131,9 @@ Reservation Flow => will be like this
 
 - okay if the reservation will be stored and the admin wanna see the one month reservation for example ! how can i acheive this ? => here when i make the get reservation i get the 
 data without any condition => the seat place will be the date of today with the number ( coming from the front) => 
+
+
+###  BUG
+
+- i made a reservation with another day , and it tell me ' this user have a seat' => or iam in another day => BUGFIX => iam gonna check with the date if the reserved at 
+=> if the user make a double reservation at the same date tell him => ' this user have a seat'
