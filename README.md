@@ -135,12 +135,6 @@ Reservation Flow => will be like this
 data without any condition => the seat place will be the date of today with the number ( coming from the front) => 
 
 
-- US001 : after every reservation i am gonna increment a number perhaps ? or the length of the reservation of today ! if the length is equal the seatNumber of the bus i am must s
-
-
--US001-1 :i can't get the seatNumber of the bus because it's global one = always 29 for example
-          what should i do ? i have the the number of today seats reserved by the reservation of today ! => iam gonna check the length of data of today reservation ! and compare with the busSeatNumber from the Bus table => middleware function should be in the route of the reservation and it's gonna be placed perhaps after checking the userID
-
 
 ###  BUG
 
