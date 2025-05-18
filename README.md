@@ -30,11 +30,12 @@
 ### ✅ To Do
 
 
+
 ---
 
 ### 🛠️ Doing
 
-- [ ] Implement the registration of the user => registration
+- [ ] US-002- Implement the registration of the user => registration
   -[ ] Add password in the user schema
   -[ ] check the user is exist on the whitelist or not ? 
   -[ ] Routing of the registration
