@@ -6,6 +6,7 @@
 - [ ] Implement the method in case of many user choose one seat at once => reservation
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
+- [ ] Implement the ZOD validation in every post or input and delete also value
 
 
 
@@ -20,8 +21,6 @@
 ### 📥 Backlog
 
 - [ ] Implement the authentifcation flow in back => authentification
-- [ ] Implement the registration of the user => registration
-- [ ] Check if the user have his name in the whitelist db => registration ?
 - [ ] Imeplement the token with the right way and safe way => authentification
 
 
@@ -31,11 +30,18 @@
 ### ✅ To Do
 
 
-
 ---
 
 ### 🛠️ Doing
 
+- [ ] Implement the registration of the user => registration
+  -[ ] Add password in the user schema
+  -[ ] check the user is exist on the whitelist or not ? 
+  -[ ] Routing of the registration
+  -[ ] Controller & service
+  -[ ] middleware => chech if the user already exist ? 
+  -[ ] Check if there is any missing data 
+  -[ ] Work with jwt
   
 
 
