@@ -1,6 +1,7 @@
 import { Destination, Reservation } from "@prisma/client";
 import { prismaClient } from "../utils/prisma";
 import { todayEnd, todayStart } from "../utils/const";
+import generateToken from "../utils/token";
 
 export const createReservation = async (
   reservationPayload: any
@@ -111,4 +112,23 @@ export const cancelMyReservation = async (
       isCanceled: payloadReservartion.isCanceled,
     },
   });
+};
+
+export const createUserService = async (payloadUser: any): Promise<any> => {
+  const user = prismaClient.user.create({
+    data: {
+      email: payloadUser.email,
+      password: payloadUser.password,
+    },
+    select: {
+      email: true,
+      role: true,
+      isVerified: true,
+    },
+  });
+
+  return {
+    ...user,
+    token: generateToken(user),
+  };
 };

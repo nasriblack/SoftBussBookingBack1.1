@@ -11,6 +11,9 @@ export const endPoint = {
     GET_TODAY_RESERVATION: "/reservation_today/:destination",
     CANCEL_RESERVARTION: "/reservartion/cancel_reservartion",
   },
+  Authentification: {
+    REGISTRATION: "/register",
+  },
 };
 
 export const apiVersion = "/api/v1";

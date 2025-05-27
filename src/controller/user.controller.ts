@@ -83,3 +83,17 @@ export const cancelReservartion = async (
     next(error);
   }
 };
+
+export const createUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userPayload = request.body;
+    const userCreation = await userService.createUserService(userPayload);
+    return sendSuccessResponse(response, userCreation, HttpStatusCode.CREATED);
+  } catch (error) {
+    next(error);
+  }
+};

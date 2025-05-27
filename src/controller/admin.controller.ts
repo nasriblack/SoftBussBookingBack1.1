@@ -22,6 +22,8 @@ export const checkExistingUserWhiteList = async (
     next(error);
   }
 };
+
+// BY USERID
 export const checkExistingUser = async (
   request: Request,
   response: Response,
@@ -110,6 +112,23 @@ export const UpdateVerificationUser = async (
 
     await adminService.UpdateVerificationUser(userPayload);
     return sendSuccessResponse(response, [], HttpStatusCode.ACCEPTED);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const checkExistingUserByEmail = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const email = request.body.email;
+    const isUserExist = await adminService.CheckIfUserExist(email);
+    if (isUserExist) {
+      return sendNotFoundResponse(response, "User Already Exist");
+    }
+    next();
   } catch (error) {
     next(error);
   }

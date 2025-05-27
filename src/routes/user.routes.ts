@@ -25,4 +25,10 @@ userRoutes.put(
   UserController.cancelReservartion
 );
 
+userRoutes.post(
+  endPoint.Authentification.REGISTRATION,
+  AdminController.checkExistingUserByEmail,
+  UserController.createUser
+);
+
 export default userRoutes;

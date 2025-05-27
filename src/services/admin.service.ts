@@ -53,9 +53,7 @@ export const CheckIfWhiteListUserExist = async (
     },
   });
 };
-export const CheckIfUserExist = async (
-  userId: string
-): Promise<User | null> => {
+export const CheckIfUserExist = async (userId: string): Promise<any | null> => {
   return prismaClient.user.findUnique({
     where: {
       id: userId,
@@ -71,7 +69,7 @@ export const CheckIfUserExist = async (
 };
 export const CheckIfVerifiedUser = async (
   userId: string
-): Promise<User | null> => {
+): Promise<any | null> => {
   return prismaClient.user.findUnique({
     where: {
       id: userId,
