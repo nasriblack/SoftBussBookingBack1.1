@@ -21,7 +21,6 @@
 
 ### 📥 Backlog
 
-- [ ] Implement the authentifcation flow in back => authentification
 - [ ] Imeplement the token with the right way and safe way => authentification
 
 
@@ -30,6 +29,7 @@
 
 ### ✅ To Do
 
+- [ ] Implement the authentifcation flow in back => authentification
 
 
 ---
