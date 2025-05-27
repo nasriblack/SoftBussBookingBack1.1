@@ -7,6 +7,7 @@
 - [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] Implement the ZOD validation in every post or input and delete also value
+- [ ] Implement swagger 
 
 
 
