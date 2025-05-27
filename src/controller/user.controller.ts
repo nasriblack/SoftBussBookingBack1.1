@@ -91,6 +91,12 @@ export const createUser = async (
 ): Promise<any> => {
   try {
     const userPayload = request.body;
+    if (!userPayload.email) {
+      return sendBadRequestResponse(response, "email is required");
+    }
+    if (!userPayload.password) {
+      return sendBadRequestResponse(response, "password is required");
+    }
     const userCreation = await userService.createUserService(userPayload);
     return sendSuccessResponse(response, userCreation, HttpStatusCode.CREATED);
   } catch (error) {

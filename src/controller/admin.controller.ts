@@ -1,6 +1,7 @@
 import { NextFunction, Response, Request } from "express";
 import * as adminService from "../services/admin.service";
 import {
+  sendBadRequestResponse,
   sendNotFoundResponse,
   sendSuccessResponse,
 } from "../utils/responseHandler";
@@ -124,6 +125,9 @@ export const checkExistingUserByEmail = async (
 ): Promise<any> => {
   try {
     const email = request.body.email;
+    if (!email) {
+      return sendBadRequestResponse(response, "email is required");
+    }
     const isUserExist = await adminService.checkIfUserExistByEmail(email);
     if (isUserExist) {
       return sendNotFoundResponse(response, "User Already Exist");
