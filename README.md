@@ -120,6 +120,7 @@
 
 ### 📎 Resources & Documentation
 
+https://github.dev/gothinkster/node-express-prisma-v1-official-app/
 
 ---
 
