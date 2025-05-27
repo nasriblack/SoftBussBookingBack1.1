@@ -36,20 +36,7 @@
 
 ### 🛠️ Doing
 
-- [ ] US-002- Implement the registration of the user => registration
-  -[X] Add password in the user schema
-  -[ ] check the user is exist on the whitelist or not ? 
-  -[X] Routing of the registration
-  -[X] Controller & service
-  -[X] middleware => chech if the user already exist ? 
-  -[X] Check if there is any missing data 
-  -[X] payload is should be there 
-  -[X] Work with jwt => 
-    - [X] install jsonwebtoken
-    - [X] setup the secret key of JWT in env
-    - [X] install bcryptjs
-    - [X] hash the password
-    - [X] make the util file to generate the token
+
   
 
 
@@ -98,6 +85,21 @@
     -[X] update the reservartion !
     -[X] new router
     -[X] new controller function and service function
+
+- [X] US-002- Implement the registration of the user => registration => 27-05-2025
+  -[X] Add password in the user schema
+  -[-] check the user is exist on the whitelist or not ? => not required
+  -[X] Routing of the registration
+  -[X] Controller & service
+  -[X] middleware => chech if the user already exist ? 
+  -[X] Check if there is any missing data 
+  -[X] payload is should be there 
+  -[X] Work with jwt => 
+    - [X] install jsonwebtoken
+    - [X] setup the secret key of JWT in env
+    - [X] install bcryptjs
+    - [X] hash the password
+    - [X] make the util file to generate the token
 
 
 ---
