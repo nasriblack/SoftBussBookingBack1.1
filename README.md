@@ -41,12 +41,13 @@
   -[ ] check the user is exist on the whitelist or not ? 
   -[X] Routing of the registration
   -[X] Controller & service
-  -[ ] middleware => chech if the user already exist ? 
+  -[X] middleware => chech if the user already exist ? 
   -[ ] Check if there is any missing data 
   -[ ] Work with jwt => 
     - [X] install jsonwebtoken
     - [X] setup the secret key of JWT in env
     - [ ] install bcryptjs
+    - [ ] hash the password
     - [X] make the util file to generate the token
   
 
