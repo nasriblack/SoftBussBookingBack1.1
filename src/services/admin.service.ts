@@ -67,6 +67,22 @@ export const CheckIfUserExist = async (userId: string): Promise<any | null> => {
     },
   });
 };
+export const checkIfUserExistByEmail = async (
+  email: string
+): Promise<any | null> => {
+  return prismaClient.user.findUnique({
+    where: {
+      email,
+    },
+    select: {
+      email: true,
+      id: true,
+      isVerified: true,
+      reservations: true,
+      role: true,
+    },
+  });
+};
 export const CheckIfVerifiedUser = async (
   userId: string
 ): Promise<any | null> => {

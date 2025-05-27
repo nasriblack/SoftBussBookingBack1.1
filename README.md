@@ -41,7 +41,7 @@
   -[ ] check the user is exist on the whitelist or not ? 
   -[X] Routing of the registration
   -[X] Controller & service
-  -[X] middleware => chech if the user already exist ? 
+  -[ ] middleware => chech if the user already exist ? 
   -[ ] Check if there is any missing data 
   -[ ] Work with jwt => 
     - [X] install jsonwebtoken

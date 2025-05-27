@@ -124,7 +124,7 @@ export const checkExistingUserByEmail = async (
 ): Promise<any> => {
   try {
     const email = request.body.email;
-    const isUserExist = await adminService.CheckIfUserExist(email);
+    const isUserExist = await adminService.checkIfUserExistByEmail(email);
     if (isUserExist) {
       return sendNotFoundResponse(response, "User Already Exist");
     }
