@@ -42,7 +42,11 @@
   -[ ] Controller & service
   -[ ] middleware => chech if the user already exist ? 
   -[ ] Check if there is any missing data 
-  -[ ] Work with jwt
+  -[ ] Work with jwt => 
+    - [ ] install jsonwebtoken
+    - [ ] setup the secret key of JWT in env
+    - [ ] install bcryptjs
+    - [ ] make the util file to generate the token
   
 
 
