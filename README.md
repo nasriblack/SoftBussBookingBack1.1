@@ -39,15 +39,15 @@
 - [ ] US-002- Implement the registration of the user => registration
   -[X] Add password in the user schema
   -[ ] check the user is exist on the whitelist or not ? 
-  -[ ] Routing of the registration
-  -[ ] Controller & service
-  -[ ] middleware => chech if the user already exist ? 
+  -[X] Routing of the registration
+  -[X] Controller & service
+  -[X] middleware => chech if the user already exist ? 
   -[ ] Check if there is any missing data 
   -[ ] Work with jwt => 
-    - [ ] install jsonwebtoken
-    - [ ] setup the secret key of JWT in env
+    - [X] install jsonwebtoken
+    - [X] setup the secret key of JWT in env
     - [ ] install bcryptjs
-    - [ ] make the util file to generate the token
+    - [X] make the util file to generate the token
   
 
 
