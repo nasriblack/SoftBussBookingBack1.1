@@ -43,6 +43,7 @@
   -[X] Controller & service
   -[X] middleware => chech if the user already exist ? 
   -[ ] Check if there is any missing data 
+  -[ ] payload is should be there 
   -[X] Work with jwt => 
     - [X] install jsonwebtoken
     - [X] setup the secret key of JWT in env
