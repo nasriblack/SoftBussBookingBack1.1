@@ -32,6 +32,9 @@ importers:
       express:
         specifier: ^5.1.0
         version: 5.1.0
+      express-jwt:
+        specifier: ^8.5.1
+        version: 8.5.1
       jsonwebtoken:
         specifier: ^9.0.2
         version: 9.0.2
@@ -494,6 +497,13 @@ packages:
   etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+
+  express-jwt@8.5.1:
+    resolution: {integrity: sha512-Dv6QjDLpR2jmdb8M6XQXiCcpEom7mK8TOqnr0/TngDKsG2DHVkO8+XnVxkJVN7BuS1I3OrGw6N8j5DaaGgkDRQ==}
+    engines: {node: '>= 8.0.0'}
+
+  express-unless@2.1.3:
+    resolution: {integrity: sha512-wj4tLMyCVYuIIKHGt0FhCtIViBcwzWejX0EjNxveAa6dG+0XBCQhMbx+PnkLkFCxLC69qoFrxds4pIyL88inaQ==}
 
   express@5.1.0:
     resolution: {integrity: sha512-DT9ck5YIRU+8GYzzU5kT3eHGA5iL+1Zd0EutOmTE9Dtk+Tvuzd23VBU+ec7HPNSTxXYO55gPV/hq4pSBJDjFpA==}
@@ -1220,6 +1230,14 @@ snapshots:
   escape-html@1.0.3: {}
 
   etag@1.8.1: {}
+
+  express-jwt@8.5.1:
+    dependencies:
+      '@types/jsonwebtoken': 9.0.9
+      express-unless: 2.1.3
+      jsonwebtoken: 9.0.2
+
+  express-unless@2.1.3: {}
 
   express@5.1.0:
     dependencies:
