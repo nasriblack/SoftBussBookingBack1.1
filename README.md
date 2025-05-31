@@ -41,7 +41,6 @@
 ### 🛠️ Doing
 
 
-- [ ] Implement the auth middleware to retreive the information from the token
 
 
 
@@ -113,6 +112,7 @@
 
 - [X] Implement an error handler => middleware
 - [X] Implement not found => middleware
+- [X] Implement the auth middleware to retreive the information from the token
   
 ---
 
