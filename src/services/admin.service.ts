@@ -80,6 +80,7 @@ export const checkIfUserExistByEmail = async (
       isVerified: true,
       reservations: true,
       role: true,
+      password: true,
     },
   });
 };

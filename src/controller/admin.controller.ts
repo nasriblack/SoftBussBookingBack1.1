@@ -6,6 +6,7 @@ import {
   sendSuccessResponse,
 } from "../utils/responseHandler";
 import HttpStatusCode from "../utils/httpStatusCode";
+import { endPoint } from "../utils/endpoints";
 
 export const checkExistingUserWhiteList = async (
   request: Request,
@@ -129,8 +130,10 @@ export const checkExistingUserByEmail = async (
       return sendBadRequestResponse(response, "email is required");
     }
     const isUserExist = await adminService.checkIfUserExistByEmail(email);
-    if (isUserExist) {
-      return sendNotFoundResponse(response, "User Already Exist");
+    if (request.route.path !== endPoint.Authentification.LOGIN) {
+      if (isUserExist) {
+        return sendNotFoundResponse(response, "User Already Exist");
+      }
     }
     next();
   } catch (error) {

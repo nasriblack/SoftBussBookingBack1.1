@@ -103,3 +103,29 @@ export const createUser = async (
     next(error);
   }
 };
+export const loginUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    const userPayload = request.body;
+    if (!userPayload.email) {
+      return sendBadRequestResponse(response, "email is required");
+    }
+    if (!userPayload.password) {
+      return sendBadRequestResponse(response, "password is required");
+    }
+    const userCreation = await userService.loginUserService(userPayload);
+    if (userCreation)
+      return sendSuccessResponse(
+        response,
+        userCreation,
+        HttpStatusCode.CREATED
+      );
+    else
+      return sendBadRequestResponse(response, "email or password is invalid");
+  } catch (error) {
+    next(error);
+  }
+};

@@ -42,7 +42,11 @@
 ### 🛠️ Doing
 
 
-- [ ] Implement the authentifcation flow in back => authentification
+- [ ] Imeplement the token with the right way and safe way => authentification
+  -[ ] Implement the router of login
+  -[ ] Implement the controller and service
+  -[ ] Check the email and password in the body
+  -[X] Install the express-jwt
   
 
 

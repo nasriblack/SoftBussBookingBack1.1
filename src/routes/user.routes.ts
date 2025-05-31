@@ -31,4 +31,10 @@ userRoutes.post(
   UserController.createUser
 );
 
+userRoutes.post(
+  endPoint.Authentification.LOGIN,
+  AdminController.checkExistingUserByEmail,
+  UserController.loginUser
+);
+
 export default userRoutes;

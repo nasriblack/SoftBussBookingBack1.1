@@ -3,6 +3,7 @@ import { prismaClient } from "../utils/prisma";
 import { todayEnd, todayStart } from "../utils/const";
 import generateToken from "../utils/token";
 import bcrypt from "bcryptjs";
+import { checkIfUserExistByEmail } from "./admin.service";
 
 export const createReservation = async (
   reservationPayload: any
@@ -133,4 +134,20 @@ export const createUserService = async (payloadUser: any): Promise<any> => {
     ...user,
     token: generateToken(user),
   };
+};
+
+export const loginUserService = async (payloadUser: any): Promise<any> => {
+  const emailPayload = payloadUser.email?.trim();
+  const passwordPayload = payloadUser.password?.trim();
+
+  const user = await checkIfUserExistByEmail(emailPayload);
+
+  const match = await bcrypt.compare(passwordPayload, user.password);
+  if (match) {
+    return {
+      email: user.email,
+      token: generateToken(user),
+    };
+  }
+  return null;
 };
