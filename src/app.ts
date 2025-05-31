@@ -5,6 +5,8 @@ import cors from "cors";
 import { apiVersion } from "./utils/endpoints";
 import AdminRouter from "./routes/admin.routes";
 import UserRouter from "./routes/user.routes";
+import { errorHandler } from "./middleware/errorHandler";
+import { notFoundHandler } from "./middleware/not-found";
 
 const app = express();
 app.disable("x-powered-by");
@@ -14,5 +16,8 @@ app.use(json());
 app.use(cors());
 app.use(apiVersion, AdminRouter);
 app.use(apiVersion, UserRouter);
+
+app.use(errorHandler);
+app.use(notFoundHandler);
 
 export default app;
