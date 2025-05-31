@@ -8,6 +8,7 @@
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] Implement the ZOD validation in every post or input and delete also value
 - [ ] Implement swagger 
+- [ ] Implement the logout backend function
 
 
 
@@ -33,13 +34,14 @@
 ### ✅ To Do
 
 
+- [ ] Implement the authentification using cookies => authentification => v2 api
+- [ ] Implement an error handler => middleware
+- [ ] Implement not found => middleware
 
 ---
 
 ### 🛠️ Doing
 
-- [ ] Implement the authentification using cookies => authentification => v2 api
-- [ ] Implement the logout backend function
 
   
 
@@ -130,7 +132,7 @@
 ### 📎 Resources & Documentation
 
 https://github.dev/gothinkster/node-express-prisma-v1-official-app/
-https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/schema.prisma
+https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/schema.prisma ==> the main inspiration
 
 ---
 
