@@ -193,6 +193,13 @@ Number of seat
 
 US-001 =>send the userId ! => check existing userId => question here ? => how to decrement the seat Number =><b>solution</b> from the front ! => i will always make the get of the reservartion of today when when i see a seat for example a seat 24 dosen't have any reservartion it will be empty or free to take ! => delete reservartion from the data  ====>
 i will add a isCanceled and i will put it to false as default and when the user want to cancel this value will be true! to keep everything on the database
+
+
+
+---Authentification---
+i am right now making the auth with bearer token and get the token from the header and check the token 
+what if i want to make with cookies it's better ! and best practice 
+so i am thinking to make with another branch from the main and work their and make the auth with the cookies
         
 
 ###  BUG
