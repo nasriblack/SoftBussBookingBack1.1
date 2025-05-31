@@ -41,9 +41,6 @@
 ### 🛠️ Doing
 
 
-- [X] Implement an error handler => middleware
-- [ ] Implement not found => middleware
-  
 
 
 
@@ -113,6 +110,9 @@
   -[X] Install the express-jwt
 - [X] Implement the guard route
 
+- [X] Implement an error handler => middleware
+- [X] Implement not found => middleware
+  
 ---
 
 ### 📘 What I Learned
