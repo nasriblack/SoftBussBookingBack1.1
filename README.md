@@ -21,13 +21,10 @@
 
 ### 📥 Backlog
 
-- [ ] Imeplement the token with the right way and safe way => authentification
-  -[ ] Implement the router of login
-  -[ ] Implement the controller and service
-  -[ ] Check the email and password in the body
-  -[X] Install the express-jwt
-- [ ] Implement the logout backend function
-- [ ] Implement the logique of an authentification more then one! 
+
+- [ ] Implement the logique of an authentification more then one!
+- [ ] Implement the authentification using cookies
+
 
 
 
@@ -41,12 +38,8 @@
 
 ### 🛠️ Doing
 
+- [ ] Implement the logout backend function
 
-- [ ] Imeplement the token with the right way and safe way => authentification
-  -[ ] Implement the router of login
-  -[ ] Implement the controller and service
-  -[ ] Check the email and password in the body
-  -[X] Install the express-jwt
   
 
 
@@ -110,7 +103,11 @@
     - [X] install bcryptjs
     - [X] hash the password
     - [X] make the util file to generate the token
-
+- [X] Imeplement the token with the right way and safe way => authentification
+  -[X] Implement the router of login
+  -[X] Implement the controller and service
+  -[X] Check the email and password in the body
+  -[X] Install the express-jwt
 
 ---
 
