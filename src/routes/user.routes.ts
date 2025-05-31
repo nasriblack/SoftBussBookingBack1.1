@@ -3,6 +3,7 @@ import { endPoint } from "../utils/endpoints";
 import * as UserController from "../controller/user.controller";
 import * as AdminController from "../controller/admin.controller";
 import auth from "../utils/auth";
+import { authenticate } from "../middleware/authMiddleware";
 
 const userRoutes: Router = express.Router();
 
@@ -18,14 +19,16 @@ userRoutes.post(
 
 userRoutes.get(
   endPoint.Reservation.GET_TODAY_RESERVATION,
-  auth.required,
+  // auth.required,
+  authenticate,
 
   UserController.getTodayReservation
 );
 
 userRoutes.put(
   endPoint.Reservation.CANCEL_RESERVARTION,
-  auth.required,
+  // auth.required,
+  authenticate,
 
   AdminController.checkExistingUser,
   UserController.cancelReservartion

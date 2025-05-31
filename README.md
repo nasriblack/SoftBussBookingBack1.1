@@ -24,7 +24,6 @@
 
 
 - [ ] Implement the logique of an authentification more then one!
-- [ ] Implement the logique of protectAuth
 
 
 
@@ -36,11 +35,13 @@
 
 - [ ] Implement the authentification using cookies => authentification => v2 api
 
+
 ---
 
 ### 🛠️ Doing
 
 
+- [ ] Implement the auth middleware to retreive the information from the token
 
 
 
