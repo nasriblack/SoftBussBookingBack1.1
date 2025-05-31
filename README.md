@@ -40,7 +40,6 @@
 
 - [ ] Implement the authentification using cookies => authentification => v2 api
 - [ ] Implement the logout backend function
-- [ ] Implement the guard route
 
   
 
@@ -110,6 +109,7 @@
   -[X] Implement the controller and service
   -[X] Check the email and password in the body
   -[X] Install the express-jwt
+- [X] Implement the guard route
 
 ---
 
