@@ -40,6 +40,7 @@
 
 - [ ] Implement the authentification using cookies => authentification => v2 api
 - [ ] Implement the logout backend function
+- [ ] Implement the guard route
 
   
 
