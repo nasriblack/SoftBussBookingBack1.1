@@ -23,7 +23,7 @@
 
 
 - [ ] Implement the logique of an authentification more then one!
-- [ ] Implement the authentification using cookies
+- [ ] Implement the logique of protectAuth
 
 
 
@@ -32,13 +32,14 @@
 
 ### ✅ To Do
 
+- [ ] Implement the logout backend function
 
 
 ---
 
 ### 🛠️ Doing
 
-- [ ] Implement the logout backend function
+- [ ] Implement the authentification using cookies => authentification => v2 api
 
   
 
