@@ -25,6 +25,9 @@
   -[ ] Implement the router of login
   -[ ] Implement the controller and service
   -[ ] Check the email and password in the body
+  -[X] Install the express-jwt
+- [ ] Implement the logout backend function
+- [ ] Implement the logique of an authentification more then one! 
 
 
 
