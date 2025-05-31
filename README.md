@@ -128,6 +128,7 @@
 ### 📎 Resources & Documentation
 
 https://github.dev/gothinkster/node-express-prisma-v1-official-app/
+https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/schema.prisma
 
 ---
 
