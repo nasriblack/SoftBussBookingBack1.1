@@ -1,7 +1,7 @@
 import { Destination, Reservation } from "@prisma/client";
 import { prismaClient } from "../utils/prisma";
 import { todayEnd, todayStart } from "../utils/const";
-import generateToken from "../utils/token";
+import { generateToken } from "../utils/token";
 import bcrypt from "bcryptjs";
 import { checkIfUserExistByEmail } from "./admin.service";
 

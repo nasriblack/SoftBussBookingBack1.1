@@ -2,6 +2,7 @@ import { NextFunction, Response, Request } from "express";
 import * as userService from "../services/user.service";
 import {
   sendBadRequestResponse,
+  sendSuccessNoDataResponse,
   sendSuccessResponse,
   sendUnauthorizedResponse,
 } from "../utils/responseHandler";
@@ -117,14 +118,39 @@ export const loginUser = async (
       return sendBadRequestResponse(response, "password is required");
     }
     const userCreation = await userService.loginUserService(userPayload);
-    if (userCreation)
+
+    if (userCreation) {
+      response.cookie("jwt", userCreation.token, {
+        httpOnly: true,
+        secure: process.env.APP_ENV !== "developement",
+        sameSite: "strict",
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+      });
       return sendSuccessResponse(
         response,
         userCreation,
         HttpStatusCode.CREATED
       );
-    else
+    } else
       return sendBadRequestResponse(response, "email or password is invalid");
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const logoutUser = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+): Promise<any> => {
+  console.log("checkign the req", request.cookies);
+  try {
+    response.cookie("jwt", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+
+    return sendSuccessNoDataResponse(response, "Logout Successful");
   } catch (error) {
     next(error);
   }

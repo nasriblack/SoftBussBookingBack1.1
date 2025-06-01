@@ -14,6 +14,7 @@ export const endPoint = {
   Authentification: {
     REGISTRATION: "/register",
     LOGIN: "/login",
+    LOGOUT: "/logout",
   },
 };
 

@@ -4,6 +4,7 @@ import * as UserController from "../controller/user.controller";
 import * as AdminController from "../controller/admin.controller";
 import auth from "../utils/auth";
 import { authenticate } from "../middleware/authMiddleware";
+import { protectAuth } from "../middleware/cookieJwtAuth";
 
 const userRoutes: Router = express.Router();
 
@@ -20,7 +21,7 @@ userRoutes.post(
 userRoutes.get(
   endPoint.Reservation.GET_TODAY_RESERVATION,
   // auth.required,
-  authenticate,
+  protectAuth,
 
   UserController.getTodayReservation
 );
@@ -28,7 +29,7 @@ userRoutes.get(
 userRoutes.put(
   endPoint.Reservation.CANCEL_RESERVARTION,
   // auth.required,
-  authenticate,
+  protectAuth,
 
   AdminController.checkExistingUser,
   UserController.cancelReservartion
@@ -44,6 +45,11 @@ userRoutes.post(
   endPoint.Authentification.LOGIN,
   AdminController.checkExistingUserByEmail,
   UserController.loginUser
+);
+userRoutes.post(
+  endPoint.Authentification.LOGOUT,
+  protectAuth,
+  UserController.logoutUser
 );
 
 export default userRoutes;

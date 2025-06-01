@@ -33,13 +33,13 @@
 ### ✅ To Do
 
 
-- [ ] Implement the authentification using cookies => authentification => v2 api
 
 
 ---
 
 ### 🛠️ Doing
 
+- [ ] Implement the authentification using cookies => authentification => v2 api
 
 
 
