@@ -8,7 +8,6 @@
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] Implement the ZOD validation in every post or input and delete also value
 - [ ] Implement swagger 
-- [ ] Implement the logout backend function
 
 
 
@@ -39,7 +38,6 @@
 
 ### 🛠️ Doing
 
-- [ ] Implement the authentification using cookies => authentification => v2 api
 
 
 
@@ -113,7 +111,9 @@
 - [X] Implement an error handler => middleware
 - [X] Implement not found => middleware
 - [X] Implement the auth middleware to retreive the information from the token
-  
+- [X] Implement the authentification using cookies => authentification => v2 api
+- [X] Implement the logout backend function
+
 ---
 
 ### 📘 What I Learned
