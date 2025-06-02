@@ -4,10 +4,9 @@
 - [ ] Implement the WebSocket method to podcast the reservartion name => reservation, WS
 - [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
 - [ ] Implement the method in case of many user choose one seat at once => reservation
-- [ ] Implement role-based access control
 - [ ] Add cron job to delete the reservartion list after one month => reservation
-- [ ] Implement the ZOD validation in every post or input and delete also value
 - [ ] Implement swagger 
+- [ ] Implement the logique of an authentification more then one!
 
 
 
@@ -22,8 +21,9 @@
 ### 📥 Backlog
 
 
-- [ ] Implement the logique of an authentification more then one!
 
+- [ ] Implement the ZOD validation in every post or input and delete also value
+- [ ] Implement role-based access control
 
 
 
