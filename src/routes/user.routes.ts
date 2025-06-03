@@ -10,7 +10,7 @@ const userRoutes: Router = express.Router();
 
 userRoutes.post(
   endPoint.Reservation.ADD_RESERVATION,
-  auth.required,
+  protectAuth,
   AdminController.checkExistingUser,
   AdminController.checkVerifiedUser,
   UserController.checkReservationByUser,
@@ -20,7 +20,6 @@ userRoutes.post(
 
 userRoutes.get(
   endPoint.Reservation.GET_TODAY_RESERVATION,
-  // auth.required,
   protectAuth,
 
   UserController.getTodayReservation
@@ -28,7 +27,6 @@ userRoutes.get(
 
 userRoutes.put(
   endPoint.Reservation.CANCEL_RESERVARTION,
-  // auth.required,
   protectAuth,
 
   AdminController.checkExistingUser,
