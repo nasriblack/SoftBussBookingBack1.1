@@ -2,8 +2,6 @@ import express, { Router, type Express } from "express";
 import { endPoint } from "../utils/endpoints";
 import * as UserController from "../controller/user.controller";
 import * as AdminController from "../controller/admin.controller";
-import auth from "../utils/auth";
-import { authenticate } from "../middleware/authMiddleware";
 import { protectAuth } from "../middleware/cookieJwtAuth";
 
 const userRoutes: Router = express.Router();
