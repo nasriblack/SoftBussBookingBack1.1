@@ -31,7 +31,6 @@
 ### ✅ To Do
 
 
-- [ ] Implement role-based access control
 
 
 ---
@@ -113,6 +112,7 @@
 - [X] Implement the auth middleware to retreive the information from the token
 - [X] Implement the authentification using cookies => authentification => v2 api
 - [X] Implement the logout backend function
+- [X] Implement role-based access control
 
 ---
 
