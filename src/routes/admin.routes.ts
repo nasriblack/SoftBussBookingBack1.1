@@ -1,8 +1,6 @@
 import express, { Router, type Express } from "express";
 import { endPoint } from "../utils/endpoints";
 import * as AdminController from "../controller/admin.controller";
-import auth from "../utils/auth";
-import { authenticate } from "../middleware/authMiddleware";
 import { protectAuth } from "../middleware/cookieJwtAuth";
 import { authorizeRole } from "../middleware/authorizeRole";
 
@@ -11,7 +9,7 @@ const adminRouter: Router = express.Router();
 adminRouter.post(
   endPoint.Admin.WHITE_LIST_USERS,
   authorizeRole(["ADMIN"]),
-  authenticate,
+  protectAuth,
   AdminController.AddUserInWhiteLIst
 );
 adminRouter.get(
