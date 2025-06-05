@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils/token";
 import * as adminService from "../services/admin.service";
-import { sendBadRequestResponse } from "../utils/responseHandler";
+import { sendUnauthorizedResponse } from "../utils/responseHandler";
 import { Role } from "@prisma/client";
 
 // Higher-order function that returns the middleware
@@ -15,7 +15,7 @@ export const authorizeRole = (roles: Role[]) => {
     const token = allCookies.jwt;
 
     if (!token) {
-      return sendBadRequestResponse(response, "No token provided");
+      return sendUnauthorizedResponse(response, "No token provided");
     }
 
     try {
@@ -23,7 +23,7 @@ export const authorizeRole = (roles: Role[]) => {
       const authUser = await adminService.CheckIfUserExist(decoded.user.id);
       console.log("checking the authUser", authUser);
       if (!authUser || !roles.includes(authUser.role)) {
-        return sendBadRequestResponse(response, "Access denied");
+        return sendUnauthorizedResponse(response, "Access denied");
       }
 
       next();
