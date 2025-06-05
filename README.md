@@ -7,6 +7,8 @@
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] Implement swagger 
 - [ ] Implement the logique of an authentification more then one!
+- [ ] Implement the linting
+- [ ] Implement the prettier
 
 
 
