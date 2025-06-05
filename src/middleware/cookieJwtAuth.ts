@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { sendBadRequestResponse } from "../utils/responseHandler";
+import { sendUnauthorizedResponse } from "../utils/responseHandler";
 import { verifyToken } from "../utils/token";
 
 import * as adminService from "../services/admin.service";
@@ -24,7 +24,10 @@ const protectAuth = async (
       next(error);
     }
   } else {
-    return sendBadRequestResponse(response, "Unauthorized - you need to login");
+    return sendUnauthorizedResponse(
+      response,
+      "Unauthorized - you need to login"
+    );
   }
 };
 

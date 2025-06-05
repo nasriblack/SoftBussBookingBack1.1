@@ -2,9 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils/token";
 import * as adminService from "../services/admin.service";
 import { sendBadRequestResponse } from "../utils/responseHandler";
+import { Role } from "@prisma/client";
 
 // Higher-order function that returns the middleware
-export const authorizeRole = (roles: string[]) => {
+export const authorizeRole = (roles: Role[]) => {
   return async (
     request: Request,
     response: Response,
