@@ -42,7 +42,6 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
-- [ ] Make search and read Documentation of Socket.IO 
 - [ ] Find a github project using socket.IO  
 
 
@@ -119,6 +118,7 @@
 - [X] Implement the authentification using cookies => authentification => v2 api
 - [X] Implement the logout backend function
 - [X] Implement role-based access control
+- [X] Make search and read Documentation of Socket.IO 
 
 ---
 
