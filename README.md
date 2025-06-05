@@ -43,6 +43,7 @@
   -[ ] Add const varaible
 
 - [ ] Make search and read Documentation of Socket.IO 
+- [ ] Find a github project using socket.IO  
 
 
 
@@ -132,6 +133,90 @@
 3- Optional : pnpm prisma db seed
 4- Optional : pnpm prisma studio
 
+
+## Socket.IO
+
+https://socket.io/docs/v4/
+
+- in Socket.IO we often use the emit and on , when we want send a msg we send thought the emit event function
+- we receive a msg with the on and we tell the type of the msg
+  - for example we emit a msg with ping we should receive this by ping socket.on('ping')
+- first connection is establish using the io.on connection event ! ( the io is our server )
+
+Sender
+```js
+socket.emit("hello", "world", (response) => {
+  console.log(response); // "got it"
+});
+```
+
+Receiver
+ ```js
+socket.on("hello", (arg, callback) => {
+  console.log(arg); // "world"
+  callback("got it");
+})
+ ```
+
+ ### Brodcasting
+ - sending to all the connected user and clients
+
+ ```js
+// to all connected clients
+io.emit("hello");
+
+// to all connected clients in the "news" room
+io.to("news").emit("hello");
+ ```
+
+
+ ### Connection with Express
+
+ ```js
+ import * as express from "express";
+import { createServer } from "http";
+import { Server } from "socket.io";
+
+const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer, { /* options */ });
+
+io.on("connection", (socket) => {
+  // ...
+});
+
+httpServer.listen(3000);
+ ```
+
+
+### Rooms
+
+```js
+io.on("connection", (socket) => {
+  console.log(socket.rooms); // Set { <socket.id> }
+  socket.join("room1");
+  console.log(socket.rooms); // Set { <socket.id>, "room1" }
+});
+```
+
+### Middlewares
+
+```js
+io.on("connection", (socket) => {
+  socket.use(([event, ...args], next) => {
+    if (isUnauthorized(event)) {
+      return next(new Error("unauthorized event"));
+    }
+    next();
+  });
+
+  socket.on("error", (err) => {
+    if (err && err.message === "unauthorized event") {
+      socket.disconnect();
+    }
+  });
+});
+```
 
 ---
 
