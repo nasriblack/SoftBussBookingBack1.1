@@ -12,8 +12,13 @@
     "prisma:seed": "ts-node prisma/seed.ts"
   },
   "keywords": [
-    "Node",
-    "ts"
+    "node",
+    "ts",
+    "prisma",
+    "booking", 
+    "express",
+    "kanban-board",
+    "websocket"
   ],
   "author": "LAKHAL NASEREDDINE",
   "license": "ISC",
