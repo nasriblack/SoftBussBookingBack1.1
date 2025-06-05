@@ -218,12 +218,20 @@ io.on("connection", (socket) => {
 });
 ```
 
+
+- every user when he connect he have his own socket.id => when he refresh the page he will get another socket.id => the disconnect event is important 
 ---
 
 ### 📎 Resources & Documentation
 
 https://github.dev/gothinkster/node-express-prisma-v1-official-app/
 https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/schema.prisma ==> the main inspiration
+
+
+#### FOR WEBSOCKET
+https://github.com/keiken-shin/chatty/blob/master/server.js
+https://github.com/rakheshkrishna2005/LiveDocs/blob/main/server/server.ts
+https://github.com/krotrn/ChatApp-backend/tree/main/src
 
 ---
 
