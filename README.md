@@ -38,6 +38,11 @@
 ### 🛠️ Doing
 
 - [ ] Refactoring code
+  -[X] Update the response of anauthorized response
+  -[ ] delete the unused code and unused file
+  -[ ] Add const varaible
+
+- [ ] Make search and read Documentation of Socket.IO 
 
 
 
