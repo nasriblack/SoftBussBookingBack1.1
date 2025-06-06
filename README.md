@@ -33,6 +33,7 @@
 ### ✅ To Do
 
 
+- [ ] Fix the .env prb => .env is existing on .gitignore but it exist on stages changes
 
 
 ---
@@ -44,7 +45,7 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
-- [ ] Find a github project using socket.IO  
+- [ ] Find a github project using socket.IO 
 
 
 
