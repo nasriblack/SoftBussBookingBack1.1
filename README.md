@@ -46,7 +46,10 @@
   -[ ] Add const varaible
 
 - [ ] Find a github project using socket.IO 
-- [ ] Make an example using socket.IO => new branch 
+- [ ] Make an example using socket.IO => new branch
+  - [X] Example with a room
+  - [X] Understand the topic of the socket.IO
+  - [ ] Make an example chat with 2 people ! 
 
 
 
