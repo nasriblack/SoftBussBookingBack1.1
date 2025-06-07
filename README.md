@@ -46,6 +46,7 @@
   -[ ] Add const varaible
 
 - [ ] Find a github project using socket.IO 
+- [ ] Make an example using socket.IO => new branch 
 
 
 
@@ -145,6 +146,7 @@ https://socket.io/docs/v4/
 - we receive a msg with the on and we tell the type of the msg
   - for example we emit a msg with ping we should receive this by ping socket.on('ping')
 - first connection is establish using the io.on connection event ! ( the io is our server )
+- every connection of user have his own socket.id => 
 
 Sender
 ```js
