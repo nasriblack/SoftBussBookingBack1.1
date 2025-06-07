@@ -46,10 +46,6 @@
   -[ ] Add const varaible
 
 - [ ] Find a github project using socket.IO 
-- [ ] Make an example using socket.IO => new branch
-  - [X] Example with a room
-  - [X] Understand the topic of the socket.IO
-  - [ ] Make an example chat with 2 people ! 
 
 
 
@@ -126,6 +122,10 @@
 - [X] Implement the logout backend function
 - [X] Implement role-based access control
 - [X] Make search and read Documentation of Socket.IO 
+- [X] Make an example using socket.IO => new branch
+  - [X] Example with a room
+  - [X] Understand the topic of the socket.IO
+  - [X] Make an example chat with 2 people ! 
 
 ---
 
