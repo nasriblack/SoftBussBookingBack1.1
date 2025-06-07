@@ -148,6 +148,9 @@ https://socket.io/docs/v4/
 - first connection is establish using the io.on connection event ! ( the io is our server )
 - every connection of user have his own socket.id => 
 
+- Brodcast => send the msg except this socket !
+- we use often the io.to("room1)
+
 Sender
 ```js
 socket.emit("hello", "world", (response) => {

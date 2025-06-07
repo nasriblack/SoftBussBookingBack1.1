@@ -7,7 +7,7 @@
     <h1>Socket.IO Chat</h1>
     <ul id="messages"></ul>
     <input id="input" autocomplete="off" placeholder="Type a message..." />
-    <button id="sendBtn">Send</button>
+    <button id="sendBtn">Sendx</button>
 
 
     <script src="/socket.io/socket.io.js"></script>
@@ -21,6 +21,12 @@
         const li = document.createElement('li');
         li.textContent = msg;
         document.getElementById('messages').appendChild(li);
+      });
+      socket.on('roomello', (msg) => {
+        console.log('heere',msg)
+      });
+      socket.on('roomello1', (msg) => {
+        console.log('heere2',msg)
       });
 
       document.getElementById('sendBtn').addEventListener('click', () => {
