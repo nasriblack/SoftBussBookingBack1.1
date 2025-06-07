@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO Chat</title>
+  </head>
+  <body>
+    <h1>Socket.IO Chat</h1>
+    <ul id="messages"></ul>
+    <input id="input" autocomplete="off" placeholder="Type a message..." />
+    <button id="sendBtn">Sendx</button>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- IMPORTANT: this loads the Socket.IO client from the server -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script> -->
+    <script>
+      const socket = io(); // => this is responsable for the connection
+      console.log('hello', document)
+      socket.on('chat message', (msg) => {
+        const li = document.createElement('li');
+        li.textContent = msg;
+        document.getElementById('messages').appendChild(li);
+      });
+      socket.on('roomello', (msg) => {
+        console.log('heere',msg)
+      });
+      socket.on('roomello1', (msg) => {
+        console.log('heere2',msg)
+      });
+
+      document.getElementById('sendBtn').addEventListener('click', () => {
+        console.log('hello')
+        const input = document.getElementById('input');
+        const msg = input.value;
+        console.log('chekcing the value', msg)
+        if (msg) {
+          socket.emit('chat message', msg);
+          input.value = '';
+        }
+      });
+    </script>
+  </body>
+</html>
