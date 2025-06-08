@@ -46,6 +46,8 @@
   -[ ] Add const varaible
 
 - [ ] Find a github project using socket.IO 
+- [ ] Find a way how to work with websocket in different file  
+
 
 
 
@@ -242,7 +244,7 @@ https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/sch
 #### FOR WEBSOCKET
 https://github.com/keiken-shin/chatty/blob/master/server.js
 https://github.com/rakheshkrishna2005/LiveDocs/blob/main/server/server.ts
-https://github.com/krotrn/ChatApp-backend/tree/main/src
+https://github.com/krotrn/ChatApp-backend/tree/main/src => need to understand this
 
 ---
 
