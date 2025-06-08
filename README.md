@@ -33,7 +33,6 @@
 ### ✅ To Do
 
 
-- [ ] Fix the .env prb => .env is existing on .gitignore but it exist on stages changes
 
 
 ---
@@ -128,6 +127,7 @@
   - [X] Example with a room
   - [X] Understand the topic of the socket.IO
   - [X] Make an example chat with 2 people ! 
+- [X] Fix the .env prb => .env is existing on .gitignore but it exist on stages changes
 
 ---
 
