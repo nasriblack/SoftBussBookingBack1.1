@@ -40,33 +40,31 @@ class SocketService {
 
     // This runs every time a new user connects to WebSocket
     this.io.on("connection", (socket: Socket) => {
+      // TODO: here from the handshake we will check if we have the cockies in headers or not ! => middleware
+      console.log("checking here", socket.handshake.headers);
       console.log(`User connected: ${socket.id}`);
 
-      // These methods set up event listeners for THIS specific socket connection
-      // Each method handles different types of events from the client
-      this.handleUserJoin(socket); // Listens for "user:join" events
+      this.handleUserJoin(socket);
       this.chatMessage(socket);
-      //   this.handleSeatBooking(socket); // Listens for seat-related events
       this.handleDisconnection(socket); // Listens for "disconnect" event
     });
   }
 
   private handleUserJoin(socket: Socket): void {
     // This sets up a listener for the "user:join" event from client
-    socket.on("user:join", (data: { userId: string }) => {
-      const { userId } = data;
+    const userId = socket.id;
 
-      // Store the user in our online users map
-      this.onlineUsers.set(socket.id, { userId, socketId: socket.id });
+    // Store the user in our online users map
+    this.onlineUsers.set(socket.id, { userId, socketId: socket.id });
 
-      // Join user to their personal room for direct messages
-      socket.join(`user:${userId}`);
+    // Join user to their personal room for direct messages
+    socket.join("bus-nabeul");
 
-      // Let everyone know the online users list changed
-      this.emitOnlineUsers();
+    // Let everyone know the online users list changed
+    this.emitOnlineUsers();
+    this.emitBusNabeul();
 
-      console.log(`User ${userId} joined with socket ${socket.id}`);
-    });
+    console.log(`User ${userId} joined with socket ${socket.id}`);
   }
 
   private handleSeatBooking(socket: Socket): void {
@@ -122,6 +120,7 @@ class SocketService {
 
       // Update everyone's online users list
       this.emitOnlineUsers();
+      this.emitBusNabeul();
     });
   }
 
@@ -129,7 +128,13 @@ class SocketService {
     if (!this.io) return;
 
     const onlineUsersList = Array.from(this.onlineUsers.values());
-    this.io.emit("users:online", { users: onlineUsersList });
+    this.io.emit("roomello", { users: onlineUsersList });
+  }
+  private emitBusNabeul(): void {
+    if (!this.io) return;
+
+    const onlineUsersList = Array.from(this.onlineUsers.values());
+    this.io.to("bus-nabeul").emit("roomello1", { users: onlineUsersList });
   }
 
   private chatMessage(socket: Socket): void {

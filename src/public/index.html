@@ -23,10 +23,10 @@
         document.getElementById('messages').appendChild(li);
       });
       socket.on('roomello', (msg) => {
-        console.log('heere',msg)
+        console.log('online user',msg)
       });
       socket.on('roomello1', (msg) => {
-        console.log('heere2',msg)
+        console.log('bus nabeul',msg)
       });
 
       document.getElementById('sendBtn').addEventListener('click', () => {
