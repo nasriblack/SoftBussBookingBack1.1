@@ -44,9 +44,6 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
-- [ ] Find a github project using socket.IO 
-- [ ] Find a way how to work with websocket in different file  
-
 
 
 
@@ -128,6 +125,8 @@
   - [X] Understand the topic of the socket.IO
   - [X] Make an example chat with 2 people ! 
 - [X] Fix the .env prb => .env is existing on .gitignore but it exist on stages changes
+- [X] Find a way how to work with websocket in different file  
+- [X] Find a github project using socket.IO 
 
 ---
 
