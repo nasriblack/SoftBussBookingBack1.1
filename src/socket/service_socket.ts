@@ -2,6 +2,7 @@
 
 import { Server as SocketIOServer, Socket } from "socket.io";
 import { Server as HttpServer } from "http";
+import { BUS_NABEUL } from "../utils/const";
 
 class SocketService {
   private io: SocketIOServer | null = null;
@@ -41,8 +42,6 @@ class SocketService {
     // This runs every time a new user connects to WebSocket
     this.io.on("connection", (socket: Socket) => {
       // TODO: here from the handshake we will check if we have the cockies in headers or not ! => middleware
-      console.log("checking here", socket.handshake.headers);
-      console.log(`User connected: ${socket.id}`);
 
       this.handleUserJoin(socket);
       this.chatMessage(socket);
@@ -56,9 +55,9 @@ class SocketService {
 
     // Store the user in our online users map
     this.onlineUsers.set(socket.id, { userId, socketId: socket.id });
-
+    console.log("cheeckign the onlineUsers", this.onlineUsers);
     // Join user to their personal room for direct messages
-    socket.join("bus-nabeul");
+    socket.join(BUS_NABEUL);
 
     // Let everyone know the online users list changed
     this.emitOnlineUsers();
@@ -134,7 +133,7 @@ class SocketService {
     if (!this.io) return;
 
     const onlineUsersList = Array.from(this.onlineUsers.values());
-    this.io.to("bus-nabeul").emit("roomello1", { users: onlineUsersList });
+    this.io.to(BUS_NABEUL).emit("roomello1", { users: onlineUsersList });
   }
 
   private chatMessage(socket: Socket): void {
