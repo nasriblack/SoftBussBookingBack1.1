@@ -1,8 +1,6 @@
 ### 🧠 Sprint Planning / Ideas
 
 - [ ] Implement the lock row method => every user have one seat => reservation
-- [ ] Implement the WebSocket method to podcast the reservartion name => reservation, WS
-- [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
 - [ ] Implement the method in case of many user choose one seat at once => reservation
 - [ ] Add cron job to delete the reservartion list after one month => reservation
 - [ ] Implement swagger 
@@ -25,6 +23,8 @@
 
 
 - [ ] Implement the ZOD validation in every post or input and delete also value
+- [ ] Implement the WebSocket method to podcast the reservartion name => reservation, WS
+- [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
 
 
 
@@ -32,6 +32,7 @@
 
 ### ✅ To Do
 
+- [ ] Join the user the room of the websocket in the login
 
 
 
@@ -311,6 +312,11 @@ Number of seat
 US-001 =>send the userId ! => check existing userId => question here ? => how to decrement the seat Number =><b>solution</b> from the front ! => i will always make the get of the reservartion of today when when i see a seat for example a seat 24 dosen't have any reservartion it will be empty or free to take ! => delete reservartion from the data  ====>
 i will add a isCanceled and i will put it to false as default and when the user want to cancel this value will be true! to keep everything on the database
 
+
+
+- the workflow of the websocket.io 
+    => Implement when the user login he will join the room
+    => is am gonna after the reserartion i will send to all users that the user X take the place S12
 
 
 ---Authentification---
