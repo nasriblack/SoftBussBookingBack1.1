@@ -232,6 +232,12 @@ io.on("connection", (socket) => {
 
 
 - every user when he connect he have his own socket.id => when he refresh the page he will get another socket.id => the disconnect event is important 
+
+- the difference between socket, io =>
+      socket.emit => send a message only to the client who is connected
+      io.emit => send a message to all the connected users
+      socket.brodcast.emit => send to everyone except the sender
+
 ---
 
 ### 📎 Resources & Documentation
