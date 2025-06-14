@@ -239,6 +239,53 @@ io.on("connection", (socket) => {
       io.emit => send a message to all the connected users
       socket.brodcast.emit => send to everyone except the sender
 
+### Note and Suggestions
+<b>The Right workflow </b>
+```txt
+User opens site → Socket connects immediately (but stays idle) → Sends token in handshake
+```
+  => Which mean the user will connect to our websocket 
+  => In the login it will affect this socket.id the right user.email
+  => Send the auth token in data of websocket => get this token from the socket.handshake.auth?.token
+  => Verify this token is valid => take the user.email
+    => if not valid || token is not valid
+      => disconnect from our websocket
+
+```js
+io.on("connection", (socket) => {
+  console.log("Socket connected but not identified yet:", socket.id);
+
+  socket.on("user:login", ({ token }) => {
+    const decoded = verifyToken(token); // e.g. { userId, email }
+
+    if (!decoded) {
+      socket.emit("auth:error", "Invalid token");
+      socket.disconnect();
+      return;
+    }
+
+    const { userId, email } = decoded;
+
+    // Save in memory or DB
+    onlineUsers.set(socket.id, { userId, socketId: socket.id });
+
+    // Join rooms
+    socket.join(`user:${userId}`);
+    socket.join(`bus:123`); // or whatever bus they’re assigned to
+
+    console.log(`User ${email} authenticated via user:login with socket ${socket.id}`);
+  });
+
+  socket.on("disconnect", () => {
+    onlineUsers.delete(socket.id);
+  });
+});
+```
+
+      
+
+
+
 ---
 
 ### 📎 Resources & Documentation
