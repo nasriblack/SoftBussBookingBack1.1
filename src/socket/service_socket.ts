@@ -3,10 +3,14 @@
 import { Server as SocketIOServer, Socket } from "socket.io";
 import { Server as HttpServer } from "http";
 import { BUS_NABEUL } from "../utils/const";
+import { verifyToken } from "../utils/token";
 
 class SocketService {
   private io: SocketIOServer | null = null;
-  private onlineUsers = new Map<string, { userId: string; socketId: string }>();
+  private onlineUsers = new Map<
+    string,
+    { userEmail: string; socketId: string }
+  >();
 
   public initializeSocket(server: HttpServer): SocketIOServer {
     this.io = new SocketIOServer(server, {
@@ -42,28 +46,42 @@ class SocketService {
     // This runs every time a new user connects to WebSocket
     this.io.on("connection", (socket: Socket) => {
       // TODO: here from the handshake we will check if we have the cockies in headers or not ! => middleware
+      console.log(`User joined with socket ${socket.id}`);
 
-      this.handleUserJoin(socket);
+      this.handleUserConnect(socket);
       this.chatMessage(socket);
       this.handleDisconnection(socket); // Listens for "disconnect" event
     });
   }
 
-  private handleUserJoin(socket: Socket): void {
+  private handleUserConnect(socket: Socket): void {
     // This sets up a listener for the "user:join" event from client
-    const userId = socket.id;
 
-    // Store the user in our online users map
-    this.onlineUsers.set(socket.id, { userId, socketId: socket.id });
-    console.log("cheeckign the onlineUsers", this.onlineUsers);
-    // Join user to their personal room for direct messages
-    socket.join(BUS_NABEUL);
+    socket.on("user:login", (data) => {
+      const token: any = socket.handshake?.query?.token;
 
-    // Let everyone know the online users list changed
-    this.emitOnlineUsers();
-    this.emitBusNabeul();
+      const decoded: any = verifyToken(token);
+      if (!decoded || !token) {
+        socket.disconnect();
+        return;
+      }
 
-    console.log(`User ${userId} joined with socket ${socket.id}`);
+      const {
+        user: { email },
+      } = decoded;
+      this.onlineUsers.set(socket.id, {
+        userEmail: email,
+        socketId: socket.id,
+      });
+      // Store the user in our online users map => will implement the user email
+      console.log("cheeckign the onlineUsers", this.onlineUsers);
+      // Join user to their personal room for direct messages
+      socket.join(BUS_NABEUL);
+
+      // Let everyone know the online users list changed
+      this.emitOnlineUsers();
+      this.emitBusNabeul();
+    });
   }
 
   private handleSeatBooking(socket: Socket): void {

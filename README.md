@@ -32,7 +32,6 @@
 
 ### ✅ To Do
 
-- [ ] Join the user the room of the websocket in the login
 
 
 
@@ -45,6 +44,10 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
+- [X] The user will connect when he open the website
+- [X] Join the user the room of the websocket in the login
+  - [X] Get the token from the websocket
+  - [X] Implements condition on the token from the websocket
 
 
 
