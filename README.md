@@ -287,8 +287,35 @@ io.on("connection", (socket) => {
 });
 ```
 
-      
+<b>Websocket Logique for the reservartion</b>
+  => i am gonna receive a websocket event from the client ? or from the server 
+    => i think from the server is better =>
+  =>  SOLUTION  => The user when he select the seat i will dispatch an action to tell the users that this seat is on process to be taken
+                => When the user complete the process the seat will be taken
+                => When the user don't take the seat ( will have some timeout )
 
+
+```js
+socket.on("seat:select", ({ seatId, userId }) => {
+  // Soft lock
+  socket.broadcast.emit("seat:selected", { seatId, userId });
+});
+
+socket.on("seat:release", ({ seatId }) => {
+  socket.broadcast.emit("seat:released", { seatId });
+});
+
+socket.on("seat:book", async ({ seatId, userId }) => {
+  // Reserve in DB using Prisma
+  const result = await seatService.bookSeat(seatId, userId);
+  if (result.success) {
+    io.emit("seat:booked", { seatId, userId, timestamp: new Date() });
+  } else {
+    socket.emit("seat:booking:failed", { seatId, reason: result.reason });
+  }
+});
+
+```
 
 
 ---
