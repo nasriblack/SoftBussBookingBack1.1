@@ -254,6 +254,7 @@ User opens site → Socket connects immediately (but stays idle) → Sends token
   => Verify this token is valid => take the user.email
     => if not valid || token is not valid
       => disconnect from our websocket
+      => Probably i am gonna make a socket.emit with the event => the token exist on the ws is not valid ...
 
 ```js
 io.on("connection", (socket) => {
