@@ -57,22 +57,26 @@ class SocketService {
   private handleUserConnect(socket: Socket): void {
     // This sets up a listener for the "user:join" event from client
 
-    socket.on("user:login", (data) => {
+    socket.on("user:login", async (data) => {
       const token: any = socket.handshake?.query?.token;
-
-      const decoded: any = verifyToken(token);
-      if (!decoded || !token) {
+      if (!token) {
+        socket.disconnect();
+        return;
+      }
+      try {
+        const decoded: any = await verifyToken(token);
+        const {
+          user: { email },
+        } = decoded;
+        this.onlineUsers.set(socket.id, {
+          userEmail: email,
+          socketId: socket.id,
+        });
+      } catch (error) {
         socket.disconnect();
         return;
       }
 
-      const {
-        user: { email },
-      } = decoded;
-      this.onlineUsers.set(socket.id, {
-        userEmail: email,
-        socketId: socket.id,
-      });
       // Store the user in our online users map => will implement the user email
       console.log("cheeckign the onlineUsers", this.onlineUsers);
       // Join user to their personal room for direct messages

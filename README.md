@@ -48,6 +48,7 @@
 - [X] Join the user the room of the websocket in the login
   - [X] Get the token from the websocket
   - [X] Implements condition on the token from the websocket
+  - [ ] Resolve the issue when the token is invalide
 
 
 
