@@ -44,11 +44,6 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
-- [X] The user will connect when he open the website
-- [X] Join the user the room of the websocket in the login
-  - [X] Get the token from the websocket
-  - [X] Implements condition on the token from the websocket
-  - [ ] Resolve the issue when the token is invalide
 
 
 
@@ -132,6 +127,11 @@
 - [X] Fix the .env prb => .env is existing on .gitignore but it exist on stages changes
 - [X] Find a way how to work with websocket in different file  
 - [X] Find a github project using socket.IO 
+- [X] The user will connect when he open the website
+- [X] Join the user the room of the websocket in the login
+  - [X] Get the token from the websocket
+  - [X] Implements condition on the token from the websocket
+  - [X] Resolve the issue when the token is invalide
 
 ---
 
