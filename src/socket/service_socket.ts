@@ -113,27 +113,30 @@ class SocketService {
     socket.on(
       "seat:book",
       (data: { seatNumber: string; busId: number; userId: string }) => {
-        console.log("Seat booking:", data);
+        const dataObj = JSON.parse(data as any);
 
         // Tell ALL users this seat is now booked
         this.io?.emit("seat:booked", {
-          seatNumber: data.seatNumber,
-          userId: data.userId,
+          seatNumber: dataObj.seatNumber,
+          userId: dataObj.userId,
           timestamp: new Date(),
         });
       }
     );
 
     // Handle when user releases a seat (navigates away, cancels selection)
-    socket.on("seat:release", (data: { seatNumber: string; busId: number }) => {
-      console.log("Seat released:", data);
+    socket.on(
+      "seat:release",
+      (data: { seatNumber: string; userId: number }) => {
+        const dataObj = JSON.parse(data as any);
 
-      // Tell other users this seat is available again
-      socket.broadcast.emit("seat:released", {
-        seatNumber: data.seatNumber,
-        busId: data.busId,
-      });
-    });
+        // Tell other users this seat is available again
+        socket.emit("seat:released", {
+          seatNumber: dataObj.seatNumber,
+          userId: dataObj.userId,
+        });
+      }
+    );
   }
 
   private handleDisconnection(socket: Socket): void {
