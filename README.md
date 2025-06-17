@@ -23,8 +23,8 @@
 
 
 - [ ] Implement the ZOD validation in every post or input and delete also value
-- [ ] Implement the WebSocket method to podcast the reservartion name => reservation, WS
-- [ ] posdacst to the users that this user is already taking the bus seat => loading => WS
+
+
 
 
 
