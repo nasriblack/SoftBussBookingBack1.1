@@ -295,7 +295,7 @@ io.on("connection", (socket) => {
   =>  SOLUTION  => The user when he select the seat i will dispatch an action to tell the users that this seat is on process to be taken
                 => When the user complete the process the seat will be taken
                 => When the user don't take the seat ( will have some timeout )
-
+  => SOLUTION FOR CLIENT SIDE => When the user click on seat => it will be pending => for example orange color ! => the seat will be not selected by other user
 
 ```js
 socket.on("seat:select", ({ seatId, userId }) => {
