@@ -43,9 +43,6 @@
   -[X] Update the response of anauthorized response
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
-- [X] Implement the selected seat event => ws
-- [ ] Implement the releasing seat event => ws
-- [ ] Implement the booking seat event => ws
 
 
 
@@ -134,6 +131,9 @@
   - [X] Get the token from the websocket
   - [X] Implements condition on the token from the websocket
   - [X] Resolve the issue when the token is invalide
+- [X] Implement the selected seat event => ws
+- [X] Implement the releasing seat event => ws
+- [X] Implement the booking seat event => ws
 
 ---
 
