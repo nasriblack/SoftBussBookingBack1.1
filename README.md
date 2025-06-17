@@ -43,7 +43,9 @@
   -[X] Update the response of anauthorized response
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
-
+- [X] Implement the selected seat event => ws
+- [ ] Implement the releasing seat event => ws
+- [ ] Implement the booking seat event => ws
 
 
 

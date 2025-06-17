@@ -49,6 +49,8 @@ class SocketService {
       console.log(`User joined with socket ${socket.id}`);
 
       this.handleUserConnect(socket);
+      this.handleSeatBooking(socket);
+
       this.chatMessage(socket);
       this.handleDisconnection(socket); // Listens for "disconnect" event
     });
@@ -93,14 +95,17 @@ class SocketService {
     socket.on(
       "seat:select",
       (data: { seatNumber: string; busId: number; userId: string }) => {
-        console.log("Seat selection:", data);
+        try {
+          const dataObj = JSON.parse(data as any);
 
-        // Tell other users this seat is being considered
-        socket.broadcast.emit("seat:selected", {
-          seatNumber: data.seatNumber,
-          busId: data.busId,
-          userId: data.userId,
-        });
+          // Tell other users this seat is being considered
+          socket.broadcast.emit("seat:selected", {
+            seatNumber: dataObj.seatNumber,
+            userId: dataObj.userId,
+          });
+        } catch (error) {
+          console.log("catching error", error);
+        }
       }
     );
 
@@ -113,7 +118,6 @@ class SocketService {
         // Tell ALL users this seat is now booked
         this.io?.emit("seat:booked", {
           seatNumber: data.seatNumber,
-          busId: data.busId,
           userId: data.userId,
           timestamp: new Date(),
         });
