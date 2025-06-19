@@ -31,7 +31,6 @@
 
 ### ✅ To Do
 
-- [ ] Add cron job to delete the reservartion list after one month => reservation
 
 
 
@@ -134,6 +133,7 @@
 - [X] Implement the selected seat event => ws
 - [X] Implement the releasing seat event => ws
 - [X] Implement the booking seat event => ws
+- [X] Add cron job to delete the reservartion list after one month => reservation
 
 ---
 
