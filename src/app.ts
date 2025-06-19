@@ -12,6 +12,9 @@ import http from "http";
 import { Server } from "socket.io";
 import path from "path";
 import { socketService } from "./socket/service_socket";
+import nodeCron from "node-cron";
+import { prismaClient } from "./utils/prisma";
+import { cronJobDeleteReservation } from "./utils/cronJob";
 
 const app = express();
 const server = http.createServer(app);
@@ -33,5 +36,6 @@ app.use(apiVersion, UserRouter);
 
 app.use(errorHandler);
 app.use(notFoundHandler);
+cronJobDeleteReservation();
 
 export default server;
