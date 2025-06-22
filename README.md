@@ -42,9 +42,6 @@
   -[X] Update the response of anauthorized response
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
-- [ ] Setup Unit Test
-  - [ ] Implement jest and superset
-  - [ ] Implement first test
 
 
 
@@ -138,6 +135,9 @@
 - [X] Implement the releasing seat event => ws
 - [X] Implement the booking seat event => ws
 - [X] Add cron job to delete the reservartion list after one month => reservation
+- [X] Setup Unit Test
+  - [X] Implement jest and superset
+  - [X] Implement first test
 
 ---
 
