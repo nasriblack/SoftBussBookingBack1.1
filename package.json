@@ -8,6 +8,7 @@
     "clean": "rm -rd dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/server.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
+    "test": "jest -i --detectOpenHandles --watch",
     "clear_database": "ts-node prisma/clear_database.ts",
     "prisma:seed": "ts-node prisma/seed.ts"
   },
@@ -23,8 +24,11 @@
   "author": "LAKHAL NASEREDDINE",
   "license": "ISC",
   "dependencies": {
+    "@jest/globals": "^30.0.2",
     "@prisma/client": "^6.7.0",
+    "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/supertest": "^6.0.3",
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "cookie-parser": "^1.4.7",
@@ -33,10 +37,13 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-jwt": "^8.5.1",
+    "jest": "^30.0.2",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "node-cron": "^4.1.0",
     "socket.io": "^4.8.1",
+    "supertest": "^7.1.1",
+    "ts-jest": "^29.4.0",
     "zod": "^3.24.3"
   },
   "devDependencies": {

@@ -43,6 +43,9 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 - [ ] Setup Unit Test
+  - [ ] Implement jest and superset
+  - [ ] Implement first test
+
 
 
 
