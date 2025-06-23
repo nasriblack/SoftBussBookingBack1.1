@@ -19,7 +19,9 @@
     "booking",
     "express",
     "kanban-board",
-    "websocket"
+    "websocket",
+    "jest",
+    "supertest"
   ],
   "author": "LAKHAL NASEREDDINE",
   "license": "ISC",

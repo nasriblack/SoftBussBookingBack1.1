@@ -43,6 +43,8 @@
   -[ ] delete the unused code and unused file
   -[ ] Add const varaible
 
+- [ ] Study how i set the database url when i am on test mode
+
 
 
 
@@ -336,6 +338,17 @@ https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/sch
 https://github.com/keiken-shin/chatty/blob/master/server.js
 https://github.com/rakheshkrishna2005/LiveDocs/blob/main/server/server.ts
 https://github.com/krotrn/ChatApp-backend/tree/main/src => need to understand this
+
+
+#### FOR TESTING
+
+https://github.dev/gothinkster/node-express-prisma-v1-official-app/
+https://github.dev/sushantrahate/express-typescript-prisma-postgresql/blob/main/src/features/user/routes/user.routes.ts
+
+#### FOR ZOD
+
+https://github.dev/sushantrahate/express-typescript-prisma-postgresql/blob/main/src/features/user/routes/user.routes.ts
+https://github.dev/YounesseElkars/Express-Prisma-TypeScript/blob/main/prisma/schema.prisma
 
 ---
 
