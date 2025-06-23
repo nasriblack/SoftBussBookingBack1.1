@@ -17,7 +17,6 @@ describe("Test Auth Services", () => {
         .post(`${apiVersion}${endPoint.Authentification.REGISTRATION}`)
         .send(user)
         .expect(201);
-      console.log("checking the response", response);
     });
 
     test("should throw an error when register with same email and password", async () => {
@@ -56,19 +55,58 @@ describe("Test Auth Services", () => {
     });
   });
 
-  describe.skip("Test the login service", () => {
+  describe("Test the login service", () => {
     test("should passe the login", async () => {
       const user = {
         email: "nasereddine.lakhal@blacode.com",
         password: "nasri",
       };
 
-      await request(createServer().app)
+      const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Authentification.LOGIN}`)
         .send(user)
-        .expect(404);
+        .expect(HttpStatusCode.CREATED);
+      expect(response.body.data).toHaveProperty("token");
     });
-    test("should throw an error with an empty email", () => {});
-    test("should throw an error with an empty password", () => {});
+    test("should throw an error with an empty email", async () => {
+      const user = {
+        email: "",
+        password: "nasri",
+      };
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Authentification.LOGIN}`)
+        .send(user)
+        .expect(HttpStatusCode.BAD_REQUEST);
+      expect(response.body.error.message as string).toBe("email is required");
+    });
+    test("should throw an error with an empty password", async () => {
+      const user = {
+        email: "nasereddine.lakhal@blacode.com",
+        password: "",
+      };
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Authentification.LOGIN}`)
+        .send(user)
+        .expect(HttpStatusCode.BAD_REQUEST);
+      expect(response.body.error.message as string).toBe(
+        "password is required"
+      );
+    });
+    test("should throw an error with an wrong email and password", async () => {
+      const user = {
+        email: "nasereddine.lakhal@blacode.com",
+        password: "dazdazdaz",
+      };
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Authentification.LOGIN}`)
+        .send(user)
+        .expect(HttpStatusCode.BAD_REQUEST);
+      expect(response.body.error.message as string).toBe(
+        "email or password is invalid"
+      );
+    });
   });
 });
