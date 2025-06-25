@@ -13,7 +13,7 @@ describe("Test Auth Services", () => {
         password: "nasri",
       };
 
-      const response = await request(createServer().app)
+      await request(createServer().app)
         .post(`${apiVersion}${endPoint.Authentification.REGISTRATION}`)
         .send(user)
         .expect(201);
@@ -25,7 +25,7 @@ describe("Test Auth Services", () => {
         password: "nasri",
       };
 
-      const response = await request(createServer().app)
+      await request(createServer().app)
         .post(`${apiVersion}${endPoint.Authentification.REGISTRATION}`)
         .send(user)
         .expect(404);
