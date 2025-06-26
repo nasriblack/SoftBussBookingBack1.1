@@ -1,8 +1,61 @@
 import { describe } from "@jest/globals";
+import request from "supertest";
+import { createServer } from "../../src/app";
+import { apiVersion, endPoint } from "../../src/utils/endpoints";
+import HttpStatusCode from "../../src/utils/httpStatusCode";
 
 describe("Test the Reservation Service", () => {
+  let token = "";
+  let userId = "";
+
   describe("should create a reservation", () => {
-    test("should create a reservation", async () => {
+    test.skip("should create a reservation", async () => {
+      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      let token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
+      // Test implementation
+      const body = {
+        destination: "NABEUL",
+        userId,
+        seat: "SN-2025-06-26-22",
+      };
+
+      console.log("body:", body);
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
+        .set("Cookie", `jwt=${token}`)
+        .send(body)
+        // .expect(201)
+        .then((res) => {
+          console.log("Response:", res);
+        });
+    });
+
+    test("should throw an error when creating a reservation for a non authentificated user", async () => {
+      // Test implementation
+      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      let token = "";
+      // Test implementation
+      const body = {
+        destination: "NABEUL",
+        userId,
+        seat: "SN-2025-06-26-22",
+      };
+
+      console.log("body:", body);
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
+        .set("Cookie", `jwt=${token}`)
+        .send(body)
+        .expect(HttpStatusCode.UNAUTHORIZED);
+      expect(response.body.error.message as string).toBe(
+        "Unauthorized - you need to login"
+      );
+    });
+
+    test("should throw an error when creating a reservation for a non-existing user", async () => {
       // Test implementation
     });
 
@@ -15,11 +68,27 @@ describe("Test the Reservation Service", () => {
     });
 
     test("should throw an error when creating a reservation for a non-verified user", async () => {
+      // Test PASSED
+      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      let token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
       // Test implementation
-    });
+      const body = {
+        destination: "NABEUL",
+        userId,
+        seat: "SN-2025-06-26-22",
+      };
 
-    test("should throw an error when creating a reservation for a non-existing user", async () => {
-      // Test implementation
+      console.log("body:", body);
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
+        .set("Cookie", `jwt=${token}`)
+        .send(body)
+        .expect(HttpStatusCode.NOT_FOUND);
+      expect(response.body.error.message as string).toBe(
+        "This user is not verified"
+      );
     });
 
     test("should throw an error when creating a reservation for a user with an existing reservation", async () => {

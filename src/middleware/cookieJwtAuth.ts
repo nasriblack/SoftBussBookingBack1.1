@@ -10,6 +10,7 @@ const protectAuth = async (
   next: NextFunction
 ): Promise<any> => {
   const allCookies = request.cookies;
+  console.log("allCookies:", allCookies);
   const token = allCookies.jwt;
   if (token) {
     try {
