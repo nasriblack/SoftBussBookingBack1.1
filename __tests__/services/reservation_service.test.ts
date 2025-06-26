@@ -57,6 +57,24 @@ describe("Test the Reservation Service", () => {
 
     test("should throw an error when creating a reservation for a non-existing user", async () => {
       // Test implementation
+      let userId = "796c0c01-afdddae-4c63-84b0-272932dd7f82";
+      let token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
+      // Test implementation
+      const body = {
+        destination: "NABEUL",
+        userId,
+        seat: "SN-2025-06-26-22",
+      };
+
+      console.log("body:", body);
+
+      const response = await request(createServer().app)
+        .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
+        .set("Cookie", `jwt=${token}`)
+        .send(body)
+        .expect(HttpStatusCode.NOT_FOUND);
+      expect(response.body.error.message as string).toBe("User Not Found");
     });
 
     test("should throw an error when creating a reservation with invalid data", async () => {
