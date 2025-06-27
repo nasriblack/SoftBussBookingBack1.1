@@ -28,7 +28,11 @@ export const authorizeRole = (roles: Role[]) => {
 
       next();
     } catch (error) {
-      next(error);
+      return sendUnauthorizedResponse(
+        response,
+        "Unauthorized - you need to login"
+      );
+      // next(error);
     }
   };
 };

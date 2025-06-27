@@ -173,6 +173,17 @@ describe("Test the Reservation Service", () => {
 
     test("should throw an error when the user is not authentificated", async () => {
       // Test implementation
+
+      // Test implementation
+      let tokenAdmin =
+        "aaaaaaaaa.eyJ1c2VyIjp7ImVtYWlsIjoibmFzcmlsYWtoYWxAZ21haWwuY29tIiwiaWQiOiI3M2Y4OTY0NC0yZjEzLTRiODMtYjI3NS02ODI5ZGM1MDQyNzEiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCRhc296LlhaeFp4UXQuRERPVUpUZjEuUndadDdNY1VkSTNFNzVQbUszLmx3N3FWS2RwUVRUcSJ9LCJpYXQiOjE3NTEwNDkxNzYsImV4cCI6MTc1MTEzNTU3Nn0.49VQi5pJoKiYtfwTKCym_9S6Lqcv3mzpb6HCxzgCk_c";
+      // Test implementation
+      // ACCESS DENIED IS TRUE
+      await request(createServer().app)
+        .get(`${apiVersion}${endPoint.Reservation.GET_ALL_RESERVATION}`)
+        .set("Cookie", `jwt=${tokenAdmin}`)
+
+        .expect(HttpStatusCode.UNAUTHORIZED);
     });
   });
 
