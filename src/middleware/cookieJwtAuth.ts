@@ -10,7 +10,6 @@ const protectAuth = async (
   next: NextFunction
 ): Promise<any> => {
   const allCookies = request.cookies;
-  console.log("allCookies:", allCookies);
   const token = allCookies.jwt;
   if (token) {
     try {
@@ -22,7 +21,11 @@ const protectAuth = async (
         next();
       }
     } catch (error: any) {
-      next(error);
+      return sendUnauthorizedResponse(
+        response,
+        "Unauthorized - you need to login"
+      );
+      // next(error);
     }
   } else {
     return sendUnauthorizedResponse(
