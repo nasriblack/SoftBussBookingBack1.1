@@ -122,6 +122,13 @@ describe("Test the Reservation Service", () => {
   describe("should get a reservation", () => {
     test("should get today Reservation", async () => {
       // Test implementation
+      let token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTEwNDE1ODcsImV4cCI6MTc1MTEyNzk4N30.y3e3LtaATVnlbG45RDrAaUFPz0Gwi0u3oEkMMA71aKY";
+      // Test implementation
+      await request(createServer().app)
+        .get(`${apiVersion}/reservation_today/NABEUL`)
+        .set("Cookie", `jwt=${token}`)
+        .expect(HttpStatusCode.OK);
     });
 
     test("should throw an error when the user is not authentificated", async () => {
