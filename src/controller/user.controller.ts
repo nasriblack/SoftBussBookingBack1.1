@@ -30,7 +30,9 @@ export const checkReservationBySeat = async (
 ): Promise<any> => {
   try {
     const seatId = request.body.seat;
+    console.log("checking seatId:", seatId);
     const existingReservation = await userService.checkSeatStatus(seatId);
+    console.log("existingReservation:", existingReservation);
     if (existingReservation) {
       sendBadRequestResponse(response, "The seat already taken");
     }

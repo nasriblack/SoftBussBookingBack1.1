@@ -28,10 +28,10 @@ export const checkSeatStatus = async (
   return prismaClient.reservation.findFirst({
     where: {
       seat: seatId,
-      reservedAt: {
-        gte: todayStart,
-        lte: todayEnd,
-      },
+      // reservedAt: {
+      //   gte: todayStart,
+      //   lte: todayEnd,
+      // },
     },
     select: {
       destination: true,

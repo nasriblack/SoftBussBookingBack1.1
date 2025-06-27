@@ -13,15 +13,13 @@ describe("Test the Reservation Service", () => {
     test.skip("should create a reservation", async () => {
       let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
       let token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTEwNDE1ODcsImV4cCI6MTc1MTEyNzk4N30.y3e3LtaATVnlbG45RDrAaUFPz0Gwi0u3oEkMMA71aKY";
       // Test implementation
       const body = {
         destination: "NABEUL",
         userId,
         seat: "SN-2025-06-26-22",
       };
-
-      console.log("body:", body);
 
       const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
@@ -42,8 +40,6 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      console.log("body:", body);
-
       const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
@@ -58,7 +54,7 @@ describe("Test the Reservation Service", () => {
       // Test implementation
       let userId = "796c0c01-afdddae-4c63-84b0-272932dd7f82";
       let token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTEwNDE1ODcsImV4cCI6MTc1MTEyNzk4N30.y3e3LtaATVnlbG45RDrAaUFPz0Gwi0u3oEkMMA71aKY";
       // Test implementation
       const body = {
         destination: "NABEUL",
@@ -66,14 +62,14 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      console.log("body:", body);
-
       const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
-        .expect(HttpStatusCode.NOT_FOUND);
-      expect(response.body.error.message as string).toBe("User Not Found");
+        .expect(HttpStatusCode.NOT_FOUND)
+        .then((response) => {
+          expect(response.body.error.message as string).toBe("User Not Found");
+        });
     });
 
     test("should throw an error when creating a reservation with an existing seat", async () => {
@@ -81,7 +77,7 @@ describe("Test the Reservation Service", () => {
 
       let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
       let token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTA5NDAxOTIsImV4cCI6MTc1MTAyNjU5Mn0.1vVTWFfk185LftWa-4SYmHpMa-fyYzXQUYEoRadrIR0";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTEwNDE1ODcsImV4cCI6MTc1MTEyNzk4N30.y3e3LtaATVnlbG45RDrAaUFPz0Gwi0u3oEkMMA71aKY";
       // Test implementation
       const body = {
         destination: "NABEUL",
@@ -89,17 +85,14 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      console.log("body:", body);
-
       const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
 
         .expect(HttpStatusCode.BAD_REQUEST);
-
       expect(response.body.error.message as string).toBe(
-        "This user have a seat"
+        "The seat already taken"
       );
     });
 
@@ -114,8 +107,6 @@ describe("Test the Reservation Service", () => {
         userId,
         seat: "SN-2025-06-26-22",
       };
-
-      console.log("body:", body);
 
       const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
