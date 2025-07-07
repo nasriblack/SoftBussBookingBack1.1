@@ -105,10 +105,6 @@ export const cancelMyReservation = async (
     where: {
       id: payloadReservartion.id,
       userId: payloadReservartion.userId,
-      reservedAt: {
-        gte: todayStart,
-        lte: todayEnd,
-      },
     },
     data: {
       isCanceled: payloadReservartion.isCanceled,
