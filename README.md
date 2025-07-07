@@ -9,7 +9,7 @@
 
 
 
-=> Deadline 17/05/2025
+=> Deadline 17/05/2025 ====> 07/07/2025
 
 
 
@@ -44,7 +44,6 @@
   -[ ] Add const varaible
 
 - [ ] Study how i set the database url when i am on test mode
-- [ ] Implement the reservation unit test
 
 
 
@@ -141,6 +140,7 @@
 - [X] Setup Unit Test
   - [X] Implement jest and superset
   - [X] Implement first test
+- [X] Implement the reservation unit test
 
 ---
 
