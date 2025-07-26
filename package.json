@@ -8,7 +8,8 @@
     "clean": "rm -rd dist",
     "dev": "nodemon --exec \"node -r esbuild-register ./src/server.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
-    "test": "jest -i --detectOpenHandles --watch",
+    "test": "jest",
+    "test_watch": "jest -i --detectOpenHandles --watch",
     "lint": "eslint . --ext .ts,.tsx",
     "clear_database": "ts-node prisma/clear_database.ts",
     "prisma:seed": "ts-node prisma/seed.ts"
