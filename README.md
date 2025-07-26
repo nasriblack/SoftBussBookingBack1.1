@@ -4,8 +4,6 @@
 - [ ] Implement the method in case of many user choose one seat at once => reservation
 - [ ] Implement swagger 
 - [ ] Implement the logique of an authentification more then one!
-- [ ] Implement the linting
-- [ ] Implement the prettier
 
 
 
@@ -32,6 +30,8 @@
 ### ✅ To Do
 
 
+- [ ] Implement the linting
+- [ ] Implement github actions for the CI/CD
 
 
 ---
