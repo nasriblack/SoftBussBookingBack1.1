@@ -5,14 +5,14 @@ import { apiVersion, endPoint } from "../../src/utils/endpoints";
 import HttpStatusCode from "../../src/utils/httpStatusCode";
 
 describe("Test the Reservation Service", () => {
-  let token = "";
-  let userId = "";
+  const token = "";
+  const userId = "";
 
   describe("should create a reservation", () => {
     // ALL TESTS PASSED
     test.skip("should create a reservation", async () => {
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -31,8 +31,8 @@ describe("Test the Reservation Service", () => {
 
     test("should throw an error when creating a reservation for a non authentificated user", async () => {
       // Test implementation
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token = "";
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token = "";
       // Test implementation
       const body = {
         destination: "NABEUL",
@@ -52,8 +52,8 @@ describe("Test the Reservation Service", () => {
 
     test("should throw an error when creating a reservation for a non-existing user", async () => {
       // Test implementation
-      let userId = "796c0c01-afdddae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afdddae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -75,8 +75,8 @@ describe("Test the Reservation Service", () => {
     test("should throw an error when creating a reservation with an existing seat", async () => {
       // Test implementation
 
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -98,8 +98,8 @@ describe("Test the Reservation Service", () => {
 
     test.skip("should throw an error when creating a reservation for a non-verified user", async () => {
       // Test PASSED
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -122,7 +122,7 @@ describe("Test the Reservation Service", () => {
   describe("should get a reservation", () => {
     test("should get today Reservation", async () => {
       // Test implementation
-      let token =
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       await request(createServer().app)
@@ -133,7 +133,7 @@ describe("Test the Reservation Service", () => {
 
     test("should throw an error when the user is not authentificated", async () => {
       // Test implementation
-      let tokenFlase =
+      const tokenFlase =
         "nasri.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCQ1NHVreVhIZ2dmdGNTRDNDR2poeUxPL0hmczM5N2NTZ1JYODlsVEdoRURsb0hHMzBDT1A3ZSJ9LCJpYXQiOjE3NTEwNDE1ODcsImV4cCI6MTc1MTEyNzk4N30.y3e3LtaATVnlbG45RDrAaUFPz0Gwi0u3oEkMMA71aKY";
       // Test implementation
       await request(createServer().app)
@@ -147,7 +147,7 @@ describe("Test the Reservation Service", () => {
   describe("should get all Reservation For admin", () => {
     test("should get all Reservation For admin", async () => {
       // Test implementation
-      let tokenAdmin =
+      const tokenAdmin =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       await request(createServer().app)
@@ -160,7 +160,7 @@ describe("Test the Reservation Service", () => {
       // Test implementation
       {
         // Test implementation
-        let tokenAdmin =
+        const tokenAdmin =
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
         // Test implementation
         // ACCESS DENIED IS TRUE
@@ -175,7 +175,7 @@ describe("Test the Reservation Service", () => {
       // Test implementation
 
       // Test implementation
-      let tokenAdmin =
+      const tokenAdmin =
         "aaaaaaaaa.eyJ1c2VyIjp7ImVtYWlsIjoibmFzcmlsYWtoYWxAZ21haWwuY29tIiwiaWQiOiI3M2Y4OTY0NC0yZjEzLTRiODMtYjI3NS02ODI5ZGM1MDQyNzEiLCJpc1ZlcmlmaWVkIjpmYWxzZSwicmVzZXJ2YXRpb25zIjpbXSwicm9sZSI6IlVTRVIiLCJwYXNzd29yZCI6IiQyYiQxMCRhc296LlhaeFp4UXQuRERPVUpUZjEuUndadDdNY1VkSTNFNzVQbUszLmx3N3FWS2RwUVRUcSJ9LCJpYXQiOjE3NTEwNDkxNzYsImV4cCI6MTc1MTEzNTU3Nn0.49VQi5pJoKiYtfwTKCym_9S6Lqcv3mzpb6HCxzgCk_c";
       // Test implementation
       // ACCESS DENIED IS TRUE
@@ -191,8 +191,8 @@ describe("Test the Reservation Service", () => {
     test("should cancel a reservation", async () => {
       // Test implementation
 
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -213,8 +213,8 @@ describe("Test the Reservation Service", () => {
     test("should throw an error when the user is not authentificated", async () => {
       // Test implementation
 
-      let falseUserId = "796c0c01-afae-4c63-8dd4b0-272932dd7f82";
-      let falseToken =
+      const falseUserId = "796c0c01-afae-4c63-8dd4b0-272932dd7f82";
+      const falseToken =
         "eyJhbGciOiJIUzI1NiIsIndadazdazdzaR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
@@ -234,8 +234,8 @@ describe("Test the Reservation Service", () => {
     test("should throw an error when the reservation does not exist", async () => {
       // Test implementation
 
-      let userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
-      let token =
+      const userId = "796c0c01-afae-4c63-84b0-272932dd7f82";
+      const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoibmFzZXJlZGRpbmUubGFraGFsQGJsYWNvZGUuY29tIiwiaWQiOiI3OTZjMGMwMS1hZmFlLTRjNjMtODRiMC0yNzI5MzJkZDdmODIiLCJpc1ZlcmlmaWVkIjp0cnVlLCJyZXNlcnZhdGlvbnMiOlt7ImlkIjozMDEsInVzZXJJZCI6Ijc5NmMwYzAxLWFmYWUtNGM2My04NGIwLTI3MjkzMmRkN2Y4MiIsImRlc3RpbmF0aW9uIjoiTkFCRVVMIiwicmVzZXJ2ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInVwZGF0ZWRBdCI6IjIwMjUtMDYtMjZUMTQ6NDE6MzAuMTA5WiIsInNlYXQiOiJTTi0yMDI1LTA2LTI2LTIyIiwiaXNDYW5jZWxlZCI6ZmFsc2V9XSwicm9sZSI6IkFETUlOIiwicGFzc3dvcmQiOiIkMmIkMTAkNTR1a3lYSGdnZnRjU0QzQ0dqaHlMTy9IZnMzOTdjU2dSWDg5bFRHaEVEbG9IRzMwQ09QN2UifSwiaWF0IjoxNzUxOTI0ODI5LCJleHAiOjE3NTIwMTEyMjl9.AmDGLxU6QCR9d3C80XgFrbpaHo6Ftv65bi-XY6oX090";
       // Test implementation
       const body = {
