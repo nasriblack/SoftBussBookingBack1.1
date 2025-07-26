@@ -36,10 +36,7 @@
 
 ### 🛠️ Doing
 
-- [ ] Refactoring code
-  -[X] Update the response of anauthorized response
-  -[ ] delete the unused code and unused file
-  -[ ] Add const varaible
+
 
 - [ ] Study how i set the database url when i am on test mode
 
@@ -141,6 +138,10 @@
 - [X] Implement the reservation unit test
 - [X] Implement the linting
 - [X] Implement github actions for the CI/CD
+- [X] Refactoring code
+  -[X] Update the response of anauthorized response
+  -[X] delete the unused code and unused file
+  -[X] Add const varaible
 
 ---
 
