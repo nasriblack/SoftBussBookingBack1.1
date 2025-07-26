@@ -8,7 +8,6 @@ on:
 
 env:
   node-version: 20
-  pnpm-version: 9.12.1
 
 jobs:
   lint:
@@ -22,20 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node-version }}
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Prepare PNPM via Corepack
-        run: corepack prepare pnpm@${{ env.pnpm-version }} --activate
-
-      - name: Check PNPM version
-        run: pnpm --version
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Run ESLint
-        run: pnpm run lint
+        run: npm run lint
