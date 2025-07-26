@@ -5,9 +5,6 @@ import { apiVersion, endPoint } from "../../src/utils/endpoints";
 import HttpStatusCode from "../../src/utils/httpStatusCode";
 
 describe("Test the Reservation Service", () => {
-  const token = "";
-  const userId = "";
-
   describe("should create a reservation", () => {
     // ALL TESTS PASSED
     test.skip("should create a reservation", async () => {
@@ -21,7 +18,7 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      const response = await request(createServer().app)
+      await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
@@ -62,7 +59,7 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      const response = await request(createServer().app)
+      await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
