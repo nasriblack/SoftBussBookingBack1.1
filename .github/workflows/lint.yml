@@ -23,6 +23,10 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
           cache: 'pnpm'
+          cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -35,4 +39,3 @@ jobs:
 
       - name: Run ESLint
         run: pnpm run lint
- 
