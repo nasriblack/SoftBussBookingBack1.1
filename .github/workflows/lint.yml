@@ -3,10 +3,12 @@ name: Lint and Test
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**/README.md'
   pull_request:
     branches: [main]
     paths-ignore:
-      - './README.md'
+      - '**/README.md'
 
 env:
   node-version: 20
