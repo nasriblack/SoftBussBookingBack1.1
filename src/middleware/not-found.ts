@@ -1,11 +1,7 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { sendNotFoundResponse } from "../utils/responseHandler";
 
-export const notFoundHandler = (
-  request: Request,
-  response: Response,
-  next: NextFunction
-): any => {
+export const notFoundHandler = (request: Request, response: Response): any => {
   const notFoundMessage = {
     Requested_URL: request.originalUrl,
     success: false,

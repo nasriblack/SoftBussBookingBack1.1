@@ -4,7 +4,6 @@ import {
   sendBadRequestResponse,
   sendSuccessNoDataResponse,
   sendSuccessResponse,
-  sendUnauthorizedResponse,
 } from "../utils/responseHandler";
 import HttpStatusCode from "../utils/httpStatusCode";
 import { Destination } from "@prisma/client";

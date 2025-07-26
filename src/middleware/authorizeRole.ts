@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils/token";
 import * as adminService from "../services/admin.service";

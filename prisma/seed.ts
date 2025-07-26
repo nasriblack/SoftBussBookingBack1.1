@@ -52,8 +52,8 @@ async function main() {
   }
   console.log("✅ 5 unverified users created");
 
-  // Create buses
-  const busNabeul = await prisma.bus.create({
+  // Create buses NABEUL
+  await prisma.bus.create({
     data: {
       name: "Bus to Nabeul",
       destination: Destination.NABEUL,
@@ -61,7 +61,8 @@ async function main() {
     },
   });
 
-  const busBizert = await prisma.bus.create({
+  // Create buses BIZERT
+  await prisma.bus.create({
     data: {
       name: "Bus to Bizert",
       destination: Destination.BIZERT,

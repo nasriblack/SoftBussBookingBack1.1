@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // services/socketService.ts - Detailed Explanation
 
 import { Server as SocketIOServer, Socket } from "socket.io";

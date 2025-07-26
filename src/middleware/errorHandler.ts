@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { z } from "zod";
 import { JsonWebTokenError } from "jsonwebtoken";
 import {
@@ -11,8 +11,7 @@ import {
 export const errorHandler = (
   error: any,
   request: Request,
-  response: Response,
-  next: NextFunction
+  response: Response
 ): any => {
   console.log(error);
   // Log the error stack for debugging purposes

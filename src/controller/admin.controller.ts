@@ -60,8 +60,7 @@ export const checkVerifiedUser = async (
 };
 export const AddUserInWhiteLIst = async (
   request: Request,
-  response: Response,
-  next: NextFunction
+  response: Response
 ): Promise<any> => {
   const user = request.body;
   const addUserInList = await adminService.AddUserInWhiteList(user);
@@ -70,8 +69,7 @@ export const AddUserInWhiteLIst = async (
 
 export const ListAllUserInWhiteList = async (
   request: Request,
-  response: Response,
-  next: NextFunction
+  response: Response
 ): Promise<any> => {
   const usersWhiteList = await adminService.ListAllUserInWhiteList();
   return sendSuccessResponse(response, usersWhiteList, HttpStatusCode.OK);

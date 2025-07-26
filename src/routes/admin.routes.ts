@@ -1,4 +1,4 @@
-import express, { Router, type Express } from "express";
+import express, { Router } from "express";
 import { endPoint } from "../utils/endpoints";
 import * as AdminController from "../controller/admin.controller";
 import { protectAuth } from "../middleware/cookieJwtAuth";
