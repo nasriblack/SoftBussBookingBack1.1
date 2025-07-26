@@ -5,6 +5,9 @@ import { apiVersion, endPoint } from "../../src/utils/endpoints";
 import HttpStatusCode from "../../src/utils/httpStatusCode";
 
 describe("Test the Reservation Service", () => {
+  const token = "";
+  const userId = "";
+
   describe("should create a reservation", () => {
     // ALL TESTS PASSED
     test.skip("should create a reservation", async () => {
@@ -18,7 +21,7 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      await request(createServer().app)
+      const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
@@ -59,15 +62,13 @@ describe("Test the Reservation Service", () => {
         seat: "SN-2025-06-26-22",
       };
 
-      await request(createServer().app)
+      const response = await request(createServer().app)
         .post(`${apiVersion}${endPoint.Reservation.ADD_RESERVATION}`)
         .set("Cookie", `jwt=${token}`)
         .send(body)
-        .expect(HttpStatusCode.UNAUTHORIZED)
+        .expect(HttpStatusCode.NOT_FOUND)
         .then((response) => {
-          expect(response.body.error.message as string).toBe(
-            "Unauthorized - you need to login"
-          );
+          expect(response.body.error.message as string).toBe("User Not Found");
         });
     });
 
