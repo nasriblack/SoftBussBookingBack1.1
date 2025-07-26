@@ -30,7 +30,6 @@
 ### ✅ To Do
 
 
-- [ ] Implement github actions for the CI/CD
 
 
 ---
@@ -43,7 +42,6 @@
   -[ ] Add const varaible
 
 - [ ] Study how i set the database url when i am on test mode
-- [ ] Implement the linting
 
 
 
@@ -141,6 +139,8 @@
   - [X] Implement jest and superset
   - [X] Implement first test
 - [X] Implement the reservation unit test
+- [X] Implement the linting
+- [X] Implement github actions for the CI/CD
 
 ---
 
