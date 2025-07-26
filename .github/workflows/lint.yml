@@ -28,11 +28,11 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: ${{ env.pnpm-version }}
-          run_install: false
+      - name: Prepare PNPM via Corepack
+        run: corepack prepare pnpm@${{ env.pnpm-version }} --activate
+
+      - name: Check PNPM version
+        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
