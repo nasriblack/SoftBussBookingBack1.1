@@ -30,7 +30,6 @@
 ### ✅ To Do
 
 
-- [ ] Implement the linting
 - [ ] Implement github actions for the CI/CD
 
 
@@ -44,6 +43,7 @@
   -[ ] Add const varaible
 
 - [ ] Study how i set the database url when i am on test mode
+- [ ] Implement the linting
 
 
 

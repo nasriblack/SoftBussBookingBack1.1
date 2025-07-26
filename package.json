@@ -9,6 +9,7 @@
     "dev": "nodemon --exec \"node -r esbuild-register ./src/server.ts\" -e .ts",
     "start": "node -r esbuild-register ./src/index.ts",
     "test": "jest -i --detectOpenHandles --watch",
+    "lint": "eslint . --ext .ts,.tsx",
     "clear_database": "ts-node prisma/clear_database.ts",
     "prisma:seed": "ts-node prisma/seed.ts"
   },
@@ -49,17 +50,24 @@
     "zod": "^3.24.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
     "@types/body-parser": "^1.19.5",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
     "esbuild": "^0.24.2",
     "esbuild-register": "^3.6.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
     "nodemon": "^3.1.9",
     "prisma": "^6.7.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.38.0"
   }
 }
