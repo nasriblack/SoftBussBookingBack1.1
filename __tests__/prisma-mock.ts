@@ -1,4 +1,4 @@
-import { beforeAll, afterAll, describe, it, expect } from "@jest/globals";
+import { beforeAll, afterAll } from "@jest/globals";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
