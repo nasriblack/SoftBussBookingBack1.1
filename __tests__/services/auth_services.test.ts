@@ -1,4 +1,3 @@
-import { type Express } from "express";
 import request from "supertest";
 import { createServer } from "../../src/app";
 import { apiVersion, endPoint } from "../../src/utils/endpoints";
