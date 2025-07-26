@@ -27,7 +27,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: ${{ env.node-version }}
+          version: ${{ env.pnpm-version }}
           run_install: false
 
       - name: Install dependencies
